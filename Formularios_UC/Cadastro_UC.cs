@@ -21,6 +21,7 @@ namespace MMEstacionamento.Formularios_UC
             rb_tipoMoto.Text = "Moto";
         }
 
+
         //Botão que confirma inserção de dados no banco de dados.
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
