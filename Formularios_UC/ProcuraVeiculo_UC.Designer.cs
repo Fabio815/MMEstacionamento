@@ -30,7 +30,7 @@
         {
             this.txt_placa = new System.Windows.Forms.TextBox();
             this.lbl_placa = new System.Windows.Forms.Label();
-            this.bnt_alterar = new System.Windows.Forms.Button();
+            this.bnt_procurar = new System.Windows.Forms.Button();
             this.lbl_proprietario = new System.Windows.Forms.Label();
             this.lbl_modelo = new System.Windows.Forms.Label();
             this.lbl_cor = new System.Windows.Forms.Label();
@@ -63,14 +63,15 @@
             this.lbl_placa.TabIndex = 1;
             this.lbl_placa.Text = "label1";
             // 
-            // bnt_alterar
+            // bnt_procurar
             // 
-            this.bnt_alterar.Location = new System.Drawing.Point(176, 210);
-            this.bnt_alterar.Name = "bnt_alterar";
-            this.bnt_alterar.Size = new System.Drawing.Size(75, 23);
-            this.bnt_alterar.TabIndex = 2;
-            this.bnt_alterar.Text = "button1";
-            this.bnt_alterar.UseVisualStyleBackColor = true;
+            this.bnt_procurar.Location = new System.Drawing.Point(176, 210);
+            this.bnt_procurar.Name = "bnt_procurar";
+            this.bnt_procurar.Size = new System.Drawing.Size(75, 23);
+            this.bnt_procurar.TabIndex = 2;
+            this.bnt_procurar.Text = "button1";
+            this.bnt_procurar.UseVisualStyleBackColor = true;
+            this.bnt_procurar.Click += new System.EventHandler(this.bnt_alterar_Click);
             // 
             // lbl_proprietario
             // 
@@ -177,6 +178,7 @@
             this.bnt_limpar.TabIndex = 16;
             this.bnt_limpar.Text = "button2";
             this.bnt_limpar.UseVisualStyleBackColor = true;
+            this.bnt_limpar.Click += new System.EventHandler(this.bnt_limpar_Click);
             // 
             // dataEntrada
             // 
@@ -214,7 +216,7 @@
             this.Controls.Add(this.lbl_cor);
             this.Controls.Add(this.lbl_modelo);
             this.Controls.Add(this.lbl_proprietario);
-            this.Controls.Add(this.bnt_alterar);
+            this.Controls.Add(this.bnt_procurar);
             this.Controls.Add(this.lbl_placa);
             this.Controls.Add(this.txt_placa);
             this.Name = "ProcuraVeiculo_UC";
@@ -228,7 +230,7 @@
 
         private System.Windows.Forms.TextBox txt_placa;
         private System.Windows.Forms.Label lbl_placa;
-        private System.Windows.Forms.Button bnt_alterar;
+        private System.Windows.Forms.Button bnt_procurar;
         private System.Windows.Forms.Label lbl_proprietario;
         private System.Windows.Forms.Label lbl_modelo;
         private System.Windows.Forms.Label lbl_cor;

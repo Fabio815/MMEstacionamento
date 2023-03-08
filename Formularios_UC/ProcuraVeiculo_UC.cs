@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MMEstacionamento.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,8 +28,56 @@ namespace MMEstacionamento.Formularios_UC
             lbl_tipoVeiculo.Text = "Tipo do veículo";
             dataEntrada.Visible = false;
             dataSaida.Visible = false;
-            bnt_alterar.Text = "Alterar";
-            bnt_alterar.Text = "Limpar";
+            bnt_procurar.Text = "Procurar";
+            bnt_limpar.Text = "Limpar";
+        }
+
+        private void bnt_limpar_Click(object sender, EventArgs e)
+        {
+            txt_placa.Clear();
+            txt_proprietario.Clear();
+            txt_modelo.Clear();
+            txt_cor.Clear();
+            dataSaida.Text = "";
+            dataEntrada.Text = "";
+            if (rdb_tipoCarro.Checked || rdb_tipoMoto.Checked)
+            {
+                rdb_tipoCarro.Checked = false;
+                rdb_tipoMoto.Checked = false;
+            }
+        }
+
+        private void bnt_alterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Veiculo.Unit veiculo = new Veiculo.Unit();
+                veiculo = veiculo.BuscarFicharioDB(txt_placa.Text, "Veiculo");
+                EscreverFormulario(veiculo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Veículo não encontrado... Erro {ex.Message}");
+            }
+        }
+
+        void EscreverFormulario(Veiculo.Unit veiculo)
+        {
+            txt_proprietario.Text = veiculo.Proprietario;
+            txt_modelo.Text = veiculo.Modelo;
+            txt_cor.Text = veiculo.Cor;
+            dataEntrada.Visible = true;
+            dataEntrada.Text = veiculo.DataEntrada.ToString();
+            dataSaida.Visible = true;
+            dataSaida.Text = veiculo.DataSaida.ToString();
+            if (veiculo.TipoVeiculo == TipoVeiculo.Carro)
+            {
+                rdb_tipoCarro.Checked = true;
+            }
+            else if (veiculo.TipoVeiculo == TipoVeiculo.Moto)
+            {
+                rdb_tipoMoto.Checked = true;
+            }
         }
     }
 }

@@ -47,11 +47,10 @@ namespace MMEstacionamento.Formularios_UC
         Veiculo.Unit InserirAoFormulario()
         {
             Veiculo.Unit v = new Veiculo.Unit();
-            v.Id = 1;
+            v.Placa = tb_placa.Text;
             v.Proprietario = tb_proprietario.Text;
             v.Modelo = tb_modelo.Text;
             v.Cor = tb_cor.Text;
-            v.Placa = tb_placa.Text;
             v.DataEntrada = DateTime.Now;
             if (rb_tipoCarro.Checked)
             {

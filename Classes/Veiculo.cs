@@ -15,8 +15,9 @@ namespace MMEstacionamento.Classes
         public class Unit
         {
             [Key]
-            [Required]
-            public int Id { get; set; }
+            [Required(ErrorMessage = "Placa é obrigatório.")]
+            [StringLength(8, ErrorMessage = "A placa deve conter 8 dígitos.")]
+            public string Placa { get; set; }
 
             [Required(ErrorMessage = "Preencha o campo do proprietário.")]
             [StringLength(50, ErrorMessage = "O nome do proprietário deve conter no máximo 50 caracteres.")]
@@ -26,9 +27,6 @@ namespace MMEstacionamento.Classes
             [StringLength(20, ErrorMessage = "O modelo não pode conter mais que 20 caracteres.")]
             public string Modelo { get; set; }
 
-            [Required(ErrorMessage = "Placa é obrigatório.")]
-            [StringLength(8, ErrorMessage = "A placa deve conter 8 dígitos.")]
-            public string Placa { get; set; }
 
             [Required(ErrorMessage = "O veículo deve conter cor.")]
             [StringLength(50, ErrorMessage = "O modelo não pode conter mais que 50 caracteres.")]
@@ -51,7 +49,7 @@ namespace MMEstacionamento.Classes
                 FicharioDB fichario = new FicharioDB(conexao);
                 if (fichario.status)
                 {
-                    fichario.Incluir(this.Id, clienteJson);
+                    fichario.Incluir(this.Placa, clienteJson);
                     //Se der erro.
                     if (!(fichario.status))
                     {
@@ -64,7 +62,22 @@ namespace MMEstacionamento.Classes
                 }
             }
 
-
+            public Unit BuscarFicharioDB(string placa, string conexao)
+            {
+                //Abrindo a conexão.
+                FicharioDB fichario = new FicharioDB(conexao);
+                if (fichario.status)
+                {
+                    //Colocanso os dados dentro de uma string, com base no id.
+                    string clienteJson = fichario.Buscar(placa);
+                    //Com o Desserializa, vou transformar a classe em JSON.
+                    return Veiculo.DesSerializedClassUnit(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(fichario.mensagem);
+                }
+            }
             #endregion
         }
 

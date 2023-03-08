@@ -32,16 +32,16 @@ namespace MMEstacionamento.DataBase
 
         #region "CRUD"
 
-        public void Incluir(int id, string jsonUnit)
+        public void Incluir(string placa, string jsonUnit)
         {
             status = true;
             try
             {
                 //INSERT INTO [TABELA] (Id, Proprietario) VALUES (1, 'Fábio', '{....}');
 
-                var SQL = "INSERT INTO " + tabela + " (Id, JSON) VALUES ('" + id + "', '" + jsonUnit + "')";
+                var SQL = "INSERT INTO " + tabela + " (Placa ,JSON) VALUES ('" + placa + "', '" + jsonUnit + "')";
                 db.SQLCommand(SQL);
-                mensagem = $"Veículo adicionado com sucesso! Identificardor: {id}";
+                mensagem = $"Veículo adicionado com sucesso! Identificardor: {placa}";
             }
             catch (Exception ex)
             {
@@ -50,14 +50,14 @@ namespace MMEstacionamento.DataBase
             }
         }
 
-        public string Buscar(string id)
+        public string Buscar(string placa)
         {
             status = true;
             try
             {
                 // SELECT ID, JSON FROM CLIENTE WHERE ID = '000010'
                 //Comando SQL para buscar um objeto.
-                var SQL = "SELECT Id, JSON FROM " + tabela + " WHERE Id = '" + id + "'";
+                var SQL = "SELECT JSON FROM " + tabela + " WHERE Placa = '" + placa + "'";
                 //Passando o comando para o SQLQuery.
                 var dt = db.SQLQuery(SQL);
                 //caso as colunas que tenha no banco seja maior que 0, ou seja, tenha algum dado na tabela.
@@ -65,7 +65,7 @@ namespace MMEstacionamento.DataBase
                 {
                     //Vamos passar o conteúdo para uma string e retornar ela.
                     string conteudo = dt.Rows[0]["JSON"].ToString();
-                    mensagem = $"Veículo encontrado com sucesso. Placa: {id}";
+                    mensagem = $"Veículo encontrado com sucesso. Placa: {placa}";
                     return conteudo;
                 }
                 else
@@ -80,6 +80,8 @@ namespace MMEstacionamento.DataBase
             }
             return "";
         }
+
+
         #endregion
     }
 }
