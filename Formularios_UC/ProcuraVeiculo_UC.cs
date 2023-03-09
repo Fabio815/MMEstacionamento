@@ -65,6 +65,7 @@ namespace MMEstacionamento.Formularios_UC
         Veiculo.Unit InserirDados()
         {
             Veiculo.Unit vei = new Veiculo.Unit();
+            vei.Placa = txt_placa.Text;
             vei.Proprietario = txt_proprietario.Text;
             vei.Modelo= txt_modelo.Text;
             vei.Cor = txt_cor.Text;

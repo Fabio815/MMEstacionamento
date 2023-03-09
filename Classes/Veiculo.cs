@@ -95,7 +95,6 @@ namespace MMEstacionamento.Classes
                 {
                     throw new Exception(fichario.mensagem);
                 }
-
             }
             #endregion
         }
