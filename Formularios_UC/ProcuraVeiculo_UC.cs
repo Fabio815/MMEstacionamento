@@ -30,6 +30,7 @@ namespace MMEstacionamento.Formularios_UC
             dataSaida.Visible = false;
             bnt_procurar.Text = "Procurar";
             bnt_limpar.Text = "Limpar";
+            btn_atualizar.Text = "Atualizar";
         }
 
         private void bnt_limpar_Click(object sender, EventArgs e)
@@ -61,6 +62,23 @@ namespace MMEstacionamento.Formularios_UC
             }
         }
 
+        Veiculo.Unit InserirDados()
+        {
+            Veiculo.Unit vei = new Veiculo.Unit();
+            vei.Proprietario = txt_proprietario.Text;
+            vei.Modelo= txt_modelo.Text;
+            vei.Cor = txt_cor.Text;
+            if (rdb_tipoCarro.Checked)
+            {
+                vei.TipoVeiculo = TipoVeiculo.Carro;
+            }
+            else if (rdb_tipoMoto.Checked)
+            {
+                vei.TipoVeiculo = TipoVeiculo.Moto;
+            }
+            return vei;
+        }
+    
         void EscreverFormulario(Veiculo.Unit veiculo)
         {
             txt_proprietario.Text = veiculo.Proprietario;
@@ -77,6 +95,22 @@ namespace MMEstacionamento.Formularios_UC
             else if (veiculo.TipoVeiculo == TipoVeiculo.Moto)
             {
                 rdb_tipoMoto.Checked = true;
+            }
+        }
+
+        private void btn_atualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Veiculo.Unit veiculo = new Veiculo.Unit();
+                veiculo = InserirDados();
+                
+                veiculo.AlterarFichaDB(txt_placa.Text ,"Veiculo");
+                MessageBox.Show("Dados atualizados com sucesso!", "Aviso" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

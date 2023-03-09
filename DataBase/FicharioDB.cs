@@ -93,8 +93,9 @@ namespace MMEstacionamento.DataBase
                 var dt = db.SQLQuery(SQL);
                 if (dt.Rows.Count > 0)
                 {
-                    SQL = "UPDATE " + tabela + " SET JSON " + dadosJson + " WHERE Placa = '" + placa + "'";
+                    SQL = "UPDATE " + tabela + " SET JSON '" + dadosJson + "' WHERE Placa = '" + placa + "'";
                     db.SQLCommand(SQL);
+                    status = true;
                     mensagem = "Veículo alterado com sucesso!";
                 }
                 else

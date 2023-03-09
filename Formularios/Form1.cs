@@ -65,7 +65,6 @@ namespace MMEstacionamento
             }
         }
 
-
         private void procurarVeículoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (contadorProcurarVeiculo == 0)

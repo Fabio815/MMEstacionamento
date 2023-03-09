@@ -43,6 +43,7 @@
             this.rdb_tipoCarro = new System.Windows.Forms.RadioButton();
             this.rdb_tipoMoto = new System.Windows.Forms.RadioButton();
             this.bnt_limpar = new System.Windows.Forms.Button();
+            this.btn_atualizar = new System.Windows.Forms.Button();
             this.dataEntrada = new System.Windows.Forms.Label();
             this.dataSaida = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -180,6 +181,16 @@
             this.bnt_limpar.UseVisualStyleBackColor = true;
             this.bnt_limpar.Click += new System.EventHandler(this.bnt_limpar_Click);
             // 
+            // btn_atualizar
+            // 
+            this.btn_atualizar.Location = new System.Drawing.Point(361, 208);
+            this.btn_atualizar.Name = "btn_atualizar";
+            this.btn_atualizar.Size = new System.Drawing.Size(75, 23);
+            this.btn_atualizar.TabIndex = 19;
+            this.btn_atualizar.Text = "button2";
+            this.btn_atualizar.UseVisualStyleBackColor = true;
+            this.btn_atualizar.Click += new System.EventHandler(this.btn_atualizar_Click);
+            // 
             // dataEntrada
             // 
             this.dataEntrada.AutoSize = true;
@@ -202,6 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_atualizar);
             this.Controls.Add(this.dataSaida);
             this.Controls.Add(this.dataEntrada);
             this.Controls.Add(this.bnt_limpar);
@@ -243,6 +255,7 @@
         private System.Windows.Forms.RadioButton rdb_tipoCarro;
         private System.Windows.Forms.RadioButton rdb_tipoMoto;
         private System.Windows.Forms.Button bnt_limpar;
+        private System.Windows.Forms.Button btn_atualizar;
         private System.Windows.Forms.Label dataEntrada;
         private System.Windows.Forms.Label dataSaida;
     }

@@ -78,6 +78,25 @@ namespace MMEstacionamento.Classes
                     throw new Exception(fichario.mensagem);
                 }
             }
+
+            public void AlterarFichaDB(string placa ,string conexao)
+            {
+                string vJson = Veiculo.SerializeClassUnit(this);
+                FicharioDB fichario = new FicharioDB(conexao);
+                if (fichario.status)
+                {
+                    fichario.Atualizar(placa ,vJson);
+                    if (!(fichario.status))
+                    {
+                        throw new Exception(fichario.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(fichario.mensagem);
+                }
+
+            }
             #endregion
         }
 
