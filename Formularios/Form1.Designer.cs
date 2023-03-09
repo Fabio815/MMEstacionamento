@@ -33,7 +33,6 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarVeículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saídaDeVeículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarVeículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procurarVeículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeVeículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarApenasCarrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +65,6 @@
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarVeículoToolStripMenuItem,
             this.saídaDeVeículoToolStripMenuItem,
-            this.alterarVeículoToolStripMenuItem,
             this.procurarVeículoToolStripMenuItem,
             this.listaDeVeículoToolStripMenuItem,
             this.listarApenasCarrosToolStripMenuItem,
@@ -79,54 +77,47 @@
             // cadastrarVeículoToolStripMenuItem
             // 
             this.cadastrarVeículoToolStripMenuItem.Name = "cadastrarVeículoToolStripMenuItem";
-            this.cadastrarVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.cadastrarVeículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarVeículoToolStripMenuItem.Text = "Cadastrar veículo";
             this.cadastrarVeículoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarVeículoToolStripMenuItem_Click);
             // 
             // saídaDeVeículoToolStripMenuItem
             // 
             this.saídaDeVeículoToolStripMenuItem.Name = "saídaDeVeículoToolStripMenuItem";
-            this.saídaDeVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.saídaDeVeículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saídaDeVeículoToolStripMenuItem.Text = "Saída de veículo";
             this.saídaDeVeículoToolStripMenuItem.Click += new System.EventHandler(this.saídaDeVeículoToolStripMenuItem_Click);
-            // 
-            // alterarVeículoToolStripMenuItem
-            // 
-            this.alterarVeículoToolStripMenuItem.Name = "alterarVeículoToolStripMenuItem";
-            this.alterarVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.alterarVeículoToolStripMenuItem.Text = "Alterar veículo";
-            this.alterarVeículoToolStripMenuItem.Click += new System.EventHandler(this.alterarVeículoToolStripMenuItem_Click);
             // 
             // procurarVeículoToolStripMenuItem
             // 
             this.procurarVeículoToolStripMenuItem.Name = "procurarVeículoToolStripMenuItem";
-            this.procurarVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.procurarVeículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.procurarVeículoToolStripMenuItem.Text = "Procurar veículo";
             this.procurarVeículoToolStripMenuItem.Click += new System.EventHandler(this.procurarVeículoToolStripMenuItem_Click);
             // 
             // listaDeVeículoToolStripMenuItem
             // 
             this.listaDeVeículoToolStripMenuItem.Name = "listaDeVeículoToolStripMenuItem";
-            this.listaDeVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.listaDeVeículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listaDeVeículoToolStripMenuItem.Text = "Lista de veículo";
             this.listaDeVeículoToolStripMenuItem.Click += new System.EventHandler(this.listaDeVeículoToolStripMenuItem_Click);
             // 
             // listarApenasCarrosToolStripMenuItem
             // 
             this.listarApenasCarrosToolStripMenuItem.Name = "listarApenasCarrosToolStripMenuItem";
-            this.listarApenasCarrosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.listarApenasCarrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarApenasCarrosToolStripMenuItem.Text = "Listar apenas Carros";
             // 
             // listarApenasMotosToolStripMenuItem
             // 
             this.listarApenasMotosToolStripMenuItem.Name = "listarApenasMotosToolStripMenuItem";
-            this.listarApenasMotosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.listarApenasMotosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarApenasMotosToolStripMenuItem.Text = "Listar apenas Motos";
             // 
             // faturamentoToolStripMenuItem
             // 
             this.faturamentoToolStripMenuItem.Name = "faturamentoToolStripMenuItem";
-            this.faturamentoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.faturamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.faturamentoToolStripMenuItem.Text = "Faturamento";
             // 
             // F_principal
@@ -153,7 +144,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarVeículoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saídaDeVeículoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterarVeículoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaDeVeículoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarApenasCarrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarApenasMotosToolStripMenuItem;

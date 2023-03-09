@@ -38,8 +38,9 @@ namespace MMEstacionamento.DataBase
             try
             {
                 //INSERT INTO [TABELA] (Id, Proprietario) VALUES (1, 'Fábio', '{....}');
-
+                //Comando SQL de inclusão, e como se fosse no Sql Server.
                 var SQL = "INSERT INTO " + tabela + " (Placa ,JSON) VALUES ('" + placa + "', '" + jsonUnit + "')";
+                //A classe SqlCommand é usada para representar um comando SQL
                 db.SQLCommand(SQL);
                 mensagem = $"Veículo adicionado com sucesso! Identificardor: {placa}";
             }
@@ -70,6 +71,7 @@ namespace MMEstacionamento.DataBase
                 }
                 else
                 {
+                    status = false;
                     mensagem = "Item não encontrado... Tente outro";
                 }
             } 
@@ -81,7 +83,32 @@ namespace MMEstacionamento.DataBase
             return "";
         }
 
-
+        public void Atualizar(string placa, string dadosJson)
+        {
+            status = true;
+            try
+            {
+                //UPDATE [TABELA] SET [COLUNA] WHERE id = {...};
+                var SQL = "SELECT JSON FROM " + tabela + " WHERE Placa = '" + placa + "'";
+                var dt = db.SQLQuery(SQL);
+                if (dt.Rows.Count > 0)
+                {
+                    SQL = "UPDATE " + tabela + " SET JSON " + dadosJson + " WHERE Placa = '" + placa + "'";
+                    db.SQLCommand(SQL);
+                    mensagem = "Veículo alterado com sucesso!";
+                }
+                else
+                {
+                    status = false;
+                    mensagem = "Veículo não cadastrado, ou já foi registrado a sua saída... Tente outro";
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = $"Erro ao alterar! Erro: {ex.Message}";
+            }
+        }
         #endregion
     }
 }

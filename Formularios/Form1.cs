@@ -65,23 +65,6 @@ namespace MMEstacionamento
             }
         }
 
-        private void alterarVeículoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (contadorAlterar == 0)
-            {
-                contadorAlterar++;
-                AlterarVeiculo_UC alterarVeiculo = new AlterarVeiculo_UC();
-                TabPage pagina = new TabPage();
-                pagina.Name = "alterarVeic";
-                pagina.Text = "Alterar Veículo";
-                pagina.Controls.Add(alterarVeiculo);
-                tab_principal.TabPages.Add(pagina);
-            }
-            else
-            {
-                MessageBox.Show("Aba de alterar veículo já esta aberta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
 
         private void procurarVeículoToolStripMenuItem_Click(object sender, EventArgs e)
         {

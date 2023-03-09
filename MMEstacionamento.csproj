@@ -84,12 +84,6 @@
     <Compile Include="Formularios\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios_UC\AlterarVeiculo_UC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Formularios_UC\AlterarVeiculo_UC.Designer.cs">
-      <DependentUpon>AlterarVeiculo_UC.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios_UC\Cadastro_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,9 +112,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios_UC\AlterarVeiculo_UC.resx">
-      <DependentUpon>AlterarVeiculo_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios_UC\Cadastro_UC.resx">
       <DependentUpon>Cadastro_UC.cs</DependentUpon>
