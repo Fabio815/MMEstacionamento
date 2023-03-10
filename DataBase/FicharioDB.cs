@@ -58,7 +58,7 @@ namespace MMEstacionamento.DataBase
             {
                 // SELECT ID, JSON FROM CLIENTE WHERE ID = '000010'
                 //Comando SQL para buscar um objeto.
-                var SQL = "SELECT JSON FROM " + tabela + " WHERE Placa = '" + placa + "'";
+                var SQL = "SELECT Placa, JSON FROM " + tabela + " WHERE Placa = '" + placa + "'";
                 //Passando o comando para o SQLQuery.
                 var dt = db.SQLQuery(SQL);
                 //caso as colunas que tenha no banco seja maior que 0, ou seja, tenha algum dado na tabela.
@@ -89,11 +89,11 @@ namespace MMEstacionamento.DataBase
             try
             {
                 //UPDATE [TABELA] SET [COLUNA] WHERE id = {...};
-                var SQL = "SELECT JSON FROM " + tabela + " WHERE Placa = '" + placa + "'";
+                var SQL = "SELECT Placa, JSON FROM " + tabela + " WHERE Placa = '" + placa + "'";
                 var dt = db.SQLQuery(SQL);
                 if (dt.Rows.Count > 0)
                 {
-                    SQL = "UPDATE " + tabela + " SET JSON '" + dadosJson + "' WHERE Placa = '" + placa + "'";
+                    SQL = "UPDATE " + tabela + " SET JSON = '" + dadosJson + "' WHERE Placa = '" + placa + "'";
                     db.SQLCommand(SQL);
                     status = true;
                     mensagem = "Veículo alterado com sucesso!";

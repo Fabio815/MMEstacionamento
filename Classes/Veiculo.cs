@@ -32,7 +32,6 @@ namespace MMEstacionamento.Classes
             [StringLength(50, ErrorMessage = "O modelo não pode conter mais que 50 caracteres.")]
             public string Cor { get; set; }
 
-            [Required]
             public DateTime DataEntrada { get; set; }
 
             public DateTime DataSaida { get; set; }
@@ -86,7 +85,7 @@ namespace MMEstacionamento.Classes
                 if (fichario.status)
                 {
                     fichario.Atualizar(placa ,vJson);
-                    if (!(fichario.status))
+                    if (!( fichario.status))
                     {
                         throw new Exception(fichario.mensagem);
                     }
