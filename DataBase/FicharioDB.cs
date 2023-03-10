@@ -66,7 +66,6 @@ namespace MMEstacionamento.DataBase
                 {
                     //Vamos passar o conteúdo para uma string e retornar ela.
                     string conteudo = dt.Rows[0]["JSON"].ToString();
-                    mensagem = $"Veículo encontrado com sucesso. Placa: {placa}";
                     return conteudo;
                 }
                 else
@@ -108,6 +107,27 @@ namespace MMEstacionamento.DataBase
             {
                 status = false;
                 mensagem = $"Erro ao alterar! Erro: {ex.Message}";
+            }
+        }
+
+        public void Excluir(string placa)
+        {
+            status = true;
+            try
+            {
+                string SQL = "SELECT Placa, JSON FROM " + tabela + " WHERE Placa = '" + placa + "'";
+                var dt = db.SQLQuery(SQL);
+                if (dt.Rows.Count > 0)
+                {
+                    SQL = "DELETE FROM " + tabela + " WHERE Placa = '" + placa + "'";
+                    db.SQLCommand(SQL);
+                    mensagem = "Item excluído com sucesso!";
+                }
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = "Erro ao excluir o veículo do banco de dados " + ex.Message;
             }
         }
         #endregion

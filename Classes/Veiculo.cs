@@ -95,6 +95,23 @@ namespace MMEstacionamento.Classes
                     throw new Exception(fichario.mensagem);
                 }
             }
+
+            public void ExcluirFicharioDb(string placa, string conexao)
+            {
+                FicharioDB fichario = new FicharioDB(conexao);
+                if (fichario.status)
+                {
+                    fichario.Excluir(placa);
+                    if (!(fichario.status))
+                    {
+                        throw new Exception(fichario.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(fichario.mensagem);
+                }
+            }
             #endregion
         }
 

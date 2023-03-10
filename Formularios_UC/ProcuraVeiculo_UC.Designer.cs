@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcuraVeiculo_UC));
             this.txt_placa = new System.Windows.Forms.TextBox();
             this.lbl_placa = new System.Windows.Forms.Label();
-            this.bnt_procurar = new System.Windows.Forms.Button();
             this.lbl_proprietario = new System.Windows.Forms.Label();
             this.lbl_modelo = new System.Windows.Forms.Label();
             this.lbl_cor = new System.Windows.Forms.Label();
@@ -42,15 +42,20 @@
             this.lbl_tipoVeiculo = new System.Windows.Forms.Label();
             this.rdb_tipoCarro = new System.Windows.Forms.RadioButton();
             this.rdb_tipoMoto = new System.Windows.Forms.RadioButton();
-            this.bnt_limpar = new System.Windows.Forms.Button();
-            this.btn_atualizar = new System.Windows.Forms.Button();
             this.dataEntrada = new System.Windows.Forms.Label();
             this.dataSaida = new System.Windows.Forms.Label();
+            this.tool_Principal = new System.Windows.Forms.ToolStrip();
+            this.tool_limpar = new System.Windows.Forms.ToolStripButton();
+            this.tool_abrir = new System.Windows.Forms.ToolStripButton();
+            this.tool_salvar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.tool_exluir = new System.Windows.Forms.ToolStripButton();
+            this.tool_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_placa
             // 
-            this.txt_placa.Location = new System.Drawing.Point(3, 27);
+            this.txt_placa.Location = new System.Drawing.Point(145, 68);
             this.txt_placa.Name = "txt_placa";
             this.txt_placa.Size = new System.Drawing.Size(100, 20);
             this.txt_placa.TabIndex = 0;
@@ -58,26 +63,16 @@
             // lbl_placa
             // 
             this.lbl_placa.AutoSize = true;
-            this.lbl_placa.Location = new System.Drawing.Point(3, 11);
+            this.lbl_placa.Location = new System.Drawing.Point(145, 52);
             this.lbl_placa.Name = "lbl_placa";
             this.lbl_placa.Size = new System.Drawing.Size(35, 13);
             this.lbl_placa.TabIndex = 1;
             this.lbl_placa.Text = "label1";
             // 
-            // bnt_procurar
-            // 
-            this.bnt_procurar.Location = new System.Drawing.Point(176, 210);
-            this.bnt_procurar.Name = "bnt_procurar";
-            this.bnt_procurar.Size = new System.Drawing.Size(75, 23);
-            this.bnt_procurar.TabIndex = 2;
-            this.bnt_procurar.Text = "button1";
-            this.bnt_procurar.UseVisualStyleBackColor = true;
-            this.bnt_procurar.Click += new System.EventHandler(this.bnt_alterar_Click);
-            // 
             // lbl_proprietario
             // 
             this.lbl_proprietario.AutoSize = true;
-            this.lbl_proprietario.Location = new System.Drawing.Point(3, 71);
+            this.lbl_proprietario.Location = new System.Drawing.Point(145, 112);
             this.lbl_proprietario.Name = "lbl_proprietario";
             this.lbl_proprietario.Size = new System.Drawing.Size(35, 13);
             this.lbl_proprietario.TabIndex = 3;
@@ -86,7 +81,7 @@
             // lbl_modelo
             // 
             this.lbl_modelo.AutoSize = true;
-            this.lbl_modelo.Location = new System.Drawing.Point(3, 131);
+            this.lbl_modelo.Location = new System.Drawing.Point(145, 172);
             this.lbl_modelo.Name = "lbl_modelo";
             this.lbl_modelo.Size = new System.Drawing.Size(35, 13);
             this.lbl_modelo.TabIndex = 4;
@@ -95,7 +90,7 @@
             // lbl_cor
             // 
             this.lbl_cor.AutoSize = true;
-            this.lbl_cor.Location = new System.Drawing.Point(3, 194);
+            this.lbl_cor.Location = new System.Drawing.Point(145, 235);
             this.lbl_cor.Name = "lbl_cor";
             this.lbl_cor.Size = new System.Drawing.Size(35, 13);
             this.lbl_cor.TabIndex = 5;
@@ -104,7 +99,7 @@
             // lbl_dataEntrada
             // 
             this.lbl_dataEntrada.AutoSize = true;
-            this.lbl_dataEntrada.Location = new System.Drawing.Point(173, 11);
+            this.lbl_dataEntrada.Location = new System.Drawing.Point(315, 52);
             this.lbl_dataEntrada.Name = "lbl_dataEntrada";
             this.lbl_dataEntrada.Size = new System.Drawing.Size(35, 13);
             this.lbl_dataEntrada.TabIndex = 6;
@@ -112,21 +107,21 @@
             // 
             // txt_proprietario
             // 
-            this.txt_proprietario.Location = new System.Drawing.Point(6, 87);
+            this.txt_proprietario.Location = new System.Drawing.Point(148, 128);
             this.txt_proprietario.Name = "txt_proprietario";
             this.txt_proprietario.Size = new System.Drawing.Size(100, 20);
             this.txt_proprietario.TabIndex = 7;
             // 
             // txt_modelo
             // 
-            this.txt_modelo.Location = new System.Drawing.Point(3, 147);
+            this.txt_modelo.Location = new System.Drawing.Point(145, 188);
             this.txt_modelo.Name = "txt_modelo";
             this.txt_modelo.Size = new System.Drawing.Size(100, 20);
             this.txt_modelo.TabIndex = 8;
             // 
             // txt_cor
             // 
-            this.txt_cor.Location = new System.Drawing.Point(6, 210);
+            this.txt_cor.Location = new System.Drawing.Point(148, 251);
             this.txt_cor.Name = "txt_cor";
             this.txt_cor.Size = new System.Drawing.Size(100, 20);
             this.txt_cor.TabIndex = 9;
@@ -134,7 +129,7 @@
             // lbl_dataSaida
             // 
             this.lbl_dataSaida.AutoSize = true;
-            this.lbl_dataSaida.Location = new System.Drawing.Point(173, 71);
+            this.lbl_dataSaida.Location = new System.Drawing.Point(315, 112);
             this.lbl_dataSaida.Name = "lbl_dataSaida";
             this.lbl_dataSaida.Size = new System.Drawing.Size(35, 13);
             this.lbl_dataSaida.TabIndex = 12;
@@ -143,7 +138,7 @@
             // lbl_tipoVeiculo
             // 
             this.lbl_tipoVeiculo.AutoSize = true;
-            this.lbl_tipoVeiculo.Location = new System.Drawing.Point(173, 147);
+            this.lbl_tipoVeiculo.Location = new System.Drawing.Point(315, 188);
             this.lbl_tipoVeiculo.Name = "lbl_tipoVeiculo";
             this.lbl_tipoVeiculo.Size = new System.Drawing.Size(35, 13);
             this.lbl_tipoVeiculo.TabIndex = 13;
@@ -152,7 +147,7 @@
             // rdb_tipoCarro
             // 
             this.rdb_tipoCarro.AutoSize = true;
-            this.rdb_tipoCarro.Location = new System.Drawing.Point(176, 163);
+            this.rdb_tipoCarro.Location = new System.Drawing.Point(318, 204);
             this.rdb_tipoCarro.Name = "rdb_tipoCarro";
             this.rdb_tipoCarro.Size = new System.Drawing.Size(85, 17);
             this.rdb_tipoCarro.TabIndex = 14;
@@ -163,7 +158,7 @@
             // rdb_tipoMoto
             // 
             this.rdb_tipoMoto.AutoSize = true;
-            this.rdb_tipoMoto.Location = new System.Drawing.Point(176, 186);
+            this.rdb_tipoMoto.Location = new System.Drawing.Point(409, 204);
             this.rdb_tipoMoto.Name = "rdb_tipoMoto";
             this.rdb_tipoMoto.Size = new System.Drawing.Size(85, 17);
             this.rdb_tipoMoto.TabIndex = 15;
@@ -171,30 +166,10 @@
             this.rdb_tipoMoto.Text = "radioButton2";
             this.rdb_tipoMoto.UseVisualStyleBackColor = true;
             // 
-            // bnt_limpar
-            // 
-            this.bnt_limpar.Location = new System.Drawing.Point(268, 210);
-            this.bnt_limpar.Name = "bnt_limpar";
-            this.bnt_limpar.Size = new System.Drawing.Size(75, 23);
-            this.bnt_limpar.TabIndex = 16;
-            this.bnt_limpar.Text = "button2";
-            this.bnt_limpar.UseVisualStyleBackColor = true;
-            this.bnt_limpar.Click += new System.EventHandler(this.bnt_limpar_Click);
-            // 
-            // btn_atualizar
-            // 
-            this.btn_atualizar.Location = new System.Drawing.Point(361, 208);
-            this.btn_atualizar.Name = "btn_atualizar";
-            this.btn_atualizar.Size = new System.Drawing.Size(75, 23);
-            this.btn_atualizar.TabIndex = 19;
-            this.btn_atualizar.Text = "button2";
-            this.btn_atualizar.UseVisualStyleBackColor = true;
-            this.btn_atualizar.Click += new System.EventHandler(this.btn_atualizar_Click);
-            // 
             // dataEntrada
             // 
             this.dataEntrada.AutoSize = true;
-            this.dataEntrada.Location = new System.Drawing.Point(173, 30);
+            this.dataEntrada.Location = new System.Drawing.Point(315, 71);
             this.dataEntrada.Name = "dataEntrada";
             this.dataEntrada.Size = new System.Drawing.Size(35, 13);
             this.dataEntrada.TabIndex = 17;
@@ -203,20 +178,77 @@
             // dataSaida
             // 
             this.dataSaida.AutoSize = true;
-            this.dataSaida.Location = new System.Drawing.Point(173, 94);
+            this.dataSaida.Location = new System.Drawing.Point(315, 135);
             this.dataSaida.Name = "dataSaida";
             this.dataSaida.Size = new System.Drawing.Size(35, 13);
             this.dataSaida.TabIndex = 18;
             this.dataSaida.Text = "label7";
             // 
+            // tool_Principal
+            // 
+            this.tool_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tool_abrir,
+            this.tool_salvar,
+            this.tool_limpar,
+            this.tool_exluir,
+            this.toolStripSeparator});
+            this.tool_Principal.Location = new System.Drawing.Point(0, 0);
+            this.tool_Principal.Name = "tool_Principal";
+            this.tool_Principal.Size = new System.Drawing.Size(592, 25);
+            this.tool_Principal.TabIndex = 20;
+            this.tool_Principal.Text = "toolStrip1";
+            // 
+            // tool_limpar
+            // 
+            this.tool_limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tool_limpar.Image = ((System.Drawing.Image)(resources.GetObject("tool_limpar.Image")));
+            this.tool_limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tool_limpar.Name = "tool_limpar";
+            this.tool_limpar.Size = new System.Drawing.Size(23, 22);
+            this.tool_limpar.Text = "&Novo";
+            this.tool_limpar.Click += new System.EventHandler(this.novoToolStripButton_Click);
+            // 
+            // tool_abrir
+            // 
+            this.tool_abrir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tool_abrir.Image = ((System.Drawing.Image)(resources.GetObject("tool_abrir.Image")));
+            this.tool_abrir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tool_abrir.Name = "tool_abrir";
+            this.tool_abrir.Size = new System.Drawing.Size(23, 22);
+            this.tool_abrir.Text = "&Abrir";
+            this.tool_abrir.Click += new System.EventHandler(this.abrirToolStripButton_Click);
+            // 
+            // tool_salvar
+            // 
+            this.tool_salvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tool_salvar.Image = ((System.Drawing.Image)(resources.GetObject("tool_salvar.Image")));
+            this.tool_salvar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tool_salvar.Name = "tool_salvar";
+            this.tool_salvar.Size = new System.Drawing.Size(23, 22);
+            this.tool_salvar.Text = "&Salvar";
+            this.tool_salvar.Click += new System.EventHandler(this.salvarToolStripButton_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tool_exluir
+            // 
+            this.tool_exluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tool_exluir.Image = ((System.Drawing.Image)(resources.GetObject("tool_exluir.Image")));
+            this.tool_exluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tool_exluir.Name = "tool_exluir";
+            this.tool_exluir.Size = new System.Drawing.Size(23, 22);
+            this.tool_exluir.Text = "toolStripButton1";
+            // 
             // ProcuraVeiculo_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btn_atualizar);
+            this.Controls.Add(this.tool_Principal);
             this.Controls.Add(this.dataSaida);
             this.Controls.Add(this.dataEntrada);
-            this.Controls.Add(this.bnt_limpar);
             this.Controls.Add(this.rdb_tipoMoto);
             this.Controls.Add(this.rdb_tipoCarro);
             this.Controls.Add(this.lbl_tipoVeiculo);
@@ -228,11 +260,12 @@
             this.Controls.Add(this.lbl_cor);
             this.Controls.Add(this.lbl_modelo);
             this.Controls.Add(this.lbl_proprietario);
-            this.Controls.Add(this.bnt_procurar);
             this.Controls.Add(this.lbl_placa);
             this.Controls.Add(this.txt_placa);
             this.Name = "ProcuraVeiculo_UC";
-            this.Size = new System.Drawing.Size(492, 268);
+            this.Size = new System.Drawing.Size(592, 305);
+            this.tool_Principal.ResumeLayout(false);
+            this.tool_Principal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,7 +275,6 @@
 
         private System.Windows.Forms.TextBox txt_placa;
         private System.Windows.Forms.Label lbl_placa;
-        private System.Windows.Forms.Button bnt_procurar;
         private System.Windows.Forms.Label lbl_proprietario;
         private System.Windows.Forms.Label lbl_modelo;
         private System.Windows.Forms.Label lbl_cor;
@@ -254,9 +286,13 @@
         private System.Windows.Forms.Label lbl_tipoVeiculo;
         private System.Windows.Forms.RadioButton rdb_tipoCarro;
         private System.Windows.Forms.RadioButton rdb_tipoMoto;
-        private System.Windows.Forms.Button bnt_limpar;
-        private System.Windows.Forms.Button btn_atualizar;
         private System.Windows.Forms.Label dataEntrada;
         private System.Windows.Forms.Label dataSaida;
+        private System.Windows.Forms.ToolStrip tool_Principal;
+        private System.Windows.Forms.ToolStripButton tool_limpar;
+        private System.Windows.Forms.ToolStripButton tool_abrir;
+        private System.Windows.Forms.ToolStripButton tool_salvar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripButton tool_exluir;
     }
 }

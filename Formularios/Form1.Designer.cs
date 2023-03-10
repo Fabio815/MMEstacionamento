@@ -46,7 +46,7 @@
             this.tab_principal.Location = new System.Drawing.Point(-2, 22);
             this.tab_principal.Name = "tab_principal";
             this.tab_principal.SelectedIndex = 0;
-            this.tab_principal.Size = new System.Drawing.Size(700, 272);
+            this.tab_principal.Size = new System.Drawing.Size(658, 360);
             this.tab_principal.TabIndex = 0;
             this.tab_principal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tab_principal_MouseDown);
             // 
@@ -56,7 +56,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(701, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(653, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,54 +77,54 @@
             // cadastrarVeículoToolStripMenuItem
             // 
             this.cadastrarVeículoToolStripMenuItem.Name = "cadastrarVeículoToolStripMenuItem";
-            this.cadastrarVeículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.cadastrarVeículoToolStripMenuItem.Text = "Cadastrar veículo";
             this.cadastrarVeículoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarVeículoToolStripMenuItem_Click);
             // 
             // saídaDeVeículoToolStripMenuItem
             // 
             this.saídaDeVeículoToolStripMenuItem.Name = "saídaDeVeículoToolStripMenuItem";
-            this.saídaDeVeículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saídaDeVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.saídaDeVeículoToolStripMenuItem.Text = "Saída de veículo";
             this.saídaDeVeículoToolStripMenuItem.Click += new System.EventHandler(this.saídaDeVeículoToolStripMenuItem_Click);
             // 
             // procurarVeículoToolStripMenuItem
             // 
             this.procurarVeículoToolStripMenuItem.Name = "procurarVeículoToolStripMenuItem";
-            this.procurarVeículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.procurarVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.procurarVeículoToolStripMenuItem.Text = "Procurar veículo";
             this.procurarVeículoToolStripMenuItem.Click += new System.EventHandler(this.procurarVeículoToolStripMenuItem_Click);
             // 
             // listaDeVeículoToolStripMenuItem
             // 
             this.listaDeVeículoToolStripMenuItem.Name = "listaDeVeículoToolStripMenuItem";
-            this.listaDeVeículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaDeVeículoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.listaDeVeículoToolStripMenuItem.Text = "Lista de veículo";
             this.listaDeVeículoToolStripMenuItem.Click += new System.EventHandler(this.listaDeVeículoToolStripMenuItem_Click);
             // 
             // listarApenasCarrosToolStripMenuItem
             // 
             this.listarApenasCarrosToolStripMenuItem.Name = "listarApenasCarrosToolStripMenuItem";
-            this.listarApenasCarrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarApenasCarrosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.listarApenasCarrosToolStripMenuItem.Text = "Listar apenas Carros";
             // 
             // listarApenasMotosToolStripMenuItem
             // 
             this.listarApenasMotosToolStripMenuItem.Name = "listarApenasMotosToolStripMenuItem";
-            this.listarApenasMotosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarApenasMotosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.listarApenasMotosToolStripMenuItem.Text = "Listar apenas Motos";
             // 
             // faturamentoToolStripMenuItem
             // 
             this.faturamentoToolStripMenuItem.Name = "faturamentoToolStripMenuItem";
-            this.faturamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.faturamentoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.faturamentoToolStripMenuItem.Text = "Faturamento";
             // 
             // F_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 299);
+            this.ClientSize = new System.Drawing.Size(653, 359);
             this.Controls.Add(this.tab_principal);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

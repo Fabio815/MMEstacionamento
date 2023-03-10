@@ -28,39 +28,14 @@ namespace MMEstacionamento.Formularios_UC
             lbl_tipoVeiculo.Text = "Tipo do veículo";
             dataEntrada.Visible = false;
             dataSaida.Visible = false;
-            bnt_procurar.Text = "Procurar";
-            bnt_limpar.Text = "Limpar";
-            btn_atualizar.Text = "Atualizar";
+
+            tool_Principal.Items[0].Text = "Buscar veículo";
+            tool_Principal.Items[1].Text = "Alterar veículo";
+            tool_Principal.Items[2].Text = "Limpar formulário";
+            tool_Principal.Items[3].Text = "Deletar dados do veículo";
         }
 
-        private void bnt_limpar_Click(object sender, EventArgs e)
-        {
-            txt_placa.Clear();
-            txt_proprietario.Clear();
-            txt_modelo.Clear();
-            txt_cor.Clear();
-            dataSaida.Text = "";
-            dataEntrada.Text = "";
-            if (rdb_tipoCarro.Checked || rdb_tipoMoto.Checked)
-            {
-                rdb_tipoCarro.Checked = false;
-                rdb_tipoMoto.Checked = false;
-            }
-        }
 
-        private void bnt_alterar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Veiculo.Unit veiculo = new Veiculo.Unit();
-                veiculo = veiculo.BuscarFicharioDB(txt_placa.Text, "Veiculo");
-                EscreverFormulario(veiculo);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Veículo não encontrado... Erro {ex.Message}");
-            }
-        }
 
         Veiculo.Unit InserirDados()
         {
@@ -99,15 +74,45 @@ namespace MMEstacionamento.Formularios_UC
             }
         }
 
-        private void btn_atualizar_Click(object sender, EventArgs e)
+
+        private void novoToolStripButton_Click(object sender, EventArgs e)
+        {
+            txt_placa.Clear();
+            txt_proprietario.Clear();
+            txt_modelo.Clear();
+            txt_cor.Clear();
+            dataSaida.Text = "";
+            dataEntrada.Text = "";
+            if (rdb_tipoCarro.Checked || rdb_tipoMoto.Checked)
+            {
+                rdb_tipoCarro.Checked = false;
+                rdb_tipoMoto.Checked = false;
+            }
+        }
+
+        private void abrirToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Veiculo.Unit veiculo = new Veiculo.Unit();
+                veiculo = veiculo.BuscarFicharioDB(txt_placa.Text, "Veiculo");
+                EscreverFormulario(veiculo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Veículo não encontrado... Erro {ex.Message}");
+            }
+        }
+
+        private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {
                 Veiculo.Unit veiculo = new Veiculo.Unit();
                 veiculo = InserirDados();
-                
-                veiculo.AlterarFichaDB(txt_placa.Text ,"Veiculo");
-                MessageBox.Show("Dados atualizados com sucesso!", "Aviso" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                veiculo.AlterarFichaDB(txt_placa.Text, "Veiculo");
+                MessageBox.Show("Dados atualizados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

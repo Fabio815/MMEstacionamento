@@ -45,7 +45,7 @@
             // lbl_proprietario
             // 
             this.lbl_proprietario.AutoSize = true;
-            this.lbl_proprietario.Location = new System.Drawing.Point(3, 10);
+            this.lbl_proprietario.Location = new System.Drawing.Point(73, 57);
             this.lbl_proprietario.Name = "lbl_proprietario";
             this.lbl_proprietario.Size = new System.Drawing.Size(60, 13);
             this.lbl_proprietario.TabIndex = 0;
@@ -54,7 +54,7 @@
             // lbl_modelo
             // 
             this.lbl_modelo.AutoSize = true;
-            this.lbl_modelo.Location = new System.Drawing.Point(3, 65);
+            this.lbl_modelo.Location = new System.Drawing.Point(73, 112);
             this.lbl_modelo.Name = "lbl_modelo";
             this.lbl_modelo.Size = new System.Drawing.Size(42, 13);
             this.lbl_modelo.TabIndex = 1;
@@ -63,7 +63,7 @@
             // lbl_placa
             // 
             this.lbl_placa.AutoSize = true;
-            this.lbl_placa.Location = new System.Drawing.Point(3, 105);
+            this.lbl_placa.Location = new System.Drawing.Point(73, 152);
             this.lbl_placa.Name = "lbl_placa";
             this.lbl_placa.Size = new System.Drawing.Size(34, 13);
             this.lbl_placa.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lbl_cor
             // 
             this.lbl_cor.AutoSize = true;
-            this.lbl_cor.Location = new System.Drawing.Point(3, 152);
+            this.lbl_cor.Location = new System.Drawing.Point(73, 199);
             this.lbl_cor.Name = "lbl_cor";
             this.lbl_cor.Size = new System.Drawing.Size(23, 13);
             this.lbl_cor.TabIndex = 3;
@@ -82,7 +82,7 @@
             // lbl_tipoVeiclo
             // 
             this.lbl_tipoVeiclo.AutoSize = true;
-            this.lbl_tipoVeiclo.Location = new System.Drawing.Point(224, 10);
+            this.lbl_tipoVeiclo.Location = new System.Drawing.Point(345, 60);
             this.lbl_tipoVeiclo.Name = "lbl_tipoVeiclo";
             this.lbl_tipoVeiclo.Size = new System.Drawing.Size(82, 13);
             this.lbl_tipoVeiclo.TabIndex = 4;
@@ -90,35 +90,35 @@
             // 
             // tb_proprietario
             // 
-            this.tb_proprietario.Location = new System.Drawing.Point(6, 26);
+            this.tb_proprietario.Location = new System.Drawing.Point(76, 73);
             this.tb_proprietario.Name = "tb_proprietario";
             this.tb_proprietario.Size = new System.Drawing.Size(160, 20);
             this.tb_proprietario.TabIndex = 0;
             // 
             // tb_modelo
             // 
-            this.tb_modelo.Location = new System.Drawing.Point(6, 81);
+            this.tb_modelo.Location = new System.Drawing.Point(76, 128);
             this.tb_modelo.Name = "tb_modelo";
             this.tb_modelo.Size = new System.Drawing.Size(160, 20);
             this.tb_modelo.TabIndex = 5;
             // 
             // tb_placa
             // 
-            this.tb_placa.Location = new System.Drawing.Point(6, 121);
+            this.tb_placa.Location = new System.Drawing.Point(76, 168);
             this.tb_placa.Name = "tb_placa";
             this.tb_placa.Size = new System.Drawing.Size(100, 20);
             this.tb_placa.TabIndex = 6;
             // 
             // tb_cor
             // 
-            this.tb_cor.Location = new System.Drawing.Point(6, 168);
+            this.tb_cor.Location = new System.Drawing.Point(76, 215);
             this.tb_cor.Name = "tb_cor";
             this.tb_cor.Size = new System.Drawing.Size(160, 20);
             this.tb_cor.TabIndex = 7;
             // 
             // btn_confirmar
             // 
-            this.btn_confirmar.Location = new System.Drawing.Point(226, 165);
+            this.btn_confirmar.Location = new System.Drawing.Point(348, 213);
             this.btn_confirmar.Name = "btn_confirmar";
             this.btn_confirmar.Size = new System.Drawing.Size(101, 23);
             this.btn_confirmar.TabIndex = 10;
@@ -129,7 +129,7 @@
             // rb_tipoCarro
             // 
             this.rb_tipoCarro.AutoSize = true;
-            this.rb_tipoCarro.Location = new System.Drawing.Point(227, 29);
+            this.rb_tipoCarro.Location = new System.Drawing.Point(348, 79);
             this.rb_tipoCarro.Name = "rb_tipoCarro";
             this.rb_tipoCarro.Size = new System.Drawing.Size(85, 17);
             this.rb_tipoCarro.TabIndex = 11;
@@ -140,7 +140,7 @@
             // rb_tipoMoto
             // 
             this.rb_tipoMoto.AutoSize = true;
-            this.rb_tipoMoto.Location = new System.Drawing.Point(227, 52);
+            this.rb_tipoMoto.Location = new System.Drawing.Point(348, 115);
             this.rb_tipoMoto.Name = "rb_tipoMoto";
             this.rb_tipoMoto.Size = new System.Drawing.Size(85, 17);
             this.rb_tipoMoto.TabIndex = 12;
@@ -165,7 +165,7 @@
             this.Controls.Add(this.lbl_modelo);
             this.Controls.Add(this.lbl_proprietario);
             this.Name = "Cadastro_UC";
-            this.Size = new System.Drawing.Size(373, 238);
+            this.Size = new System.Drawing.Size(514, 308);
             this.ResumeLayout(false);
             this.PerformLayout();
 

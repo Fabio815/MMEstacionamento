@@ -14,7 +14,6 @@ namespace MMEstacionamento
     public partial class F_principal : Form
     {
         int contadorCadastro = 0;
-        int contadorAlterar = 0;
         int contadorListaVeiculo = 0;
         int contadorProcurarVeiculo = 0;
         int contadorSaidaVeiculo = 0;
@@ -36,6 +35,7 @@ namespace MMEstacionamento
                 TabPage pagina = new TabPage();
                 pagina.Name = "cadastroVeic";
                 pagina.Text = "Cadastro de Veículos";
+                AutoSize = true;
                 //Em seguinda vamos adiciona na aba.
                 pagina.Controls.Add(cadastro);
                 //E por último adicionamos ao TabPages, para mostrar ao usuário.
@@ -56,6 +56,7 @@ namespace MMEstacionamento
                 TabPage pagina = new TabPage();
                 pagina.Name = "saidaVeic";
                 pagina.Text = "Saída de Veículos";
+                AutoSize = true;
                 pagina.Controls.Add(saidaVeiculos);
                 tab_principal.TabPages.Add(pagina);
             }
@@ -74,6 +75,7 @@ namespace MMEstacionamento
                 TabPage pagina = new TabPage();
                 pagina.Name = "procuraVeic";
                 pagina.Text = "Procurar Veículo";
+                AutoSize = true;
                 pagina.Controls.Add(procurarVeiculo);
                 tab_principal.TabPages.Add(pagina);
             }
@@ -93,6 +95,7 @@ namespace MMEstacionamento
                 TabPage pagina = new TabPage();
                 pagina.Name = "listaVeic";
                 pagina.Text = "Lista de Veículos";
+                AutoSize = true;
                 pagina.Controls.Add(listaVeiculos);
                 tab_principal.TabPages.Add(pagina);
             }
@@ -123,10 +126,6 @@ namespace MMEstacionamento
             if (tabPage.Name == "saidaVeic")
             {
                 contadorSaidaVeiculo = 0;
-            }
-            if (tabPage.Name == "alterarVeic")
-            {
-                contadorAlterar = 0;
             }
             if (tabPage.Name == "listaVeic")
             {
