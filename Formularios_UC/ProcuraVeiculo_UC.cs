@@ -94,9 +94,16 @@ namespace MMEstacionamento.Formularios_UC
         {
             try
             {
-                Veiculo.Unit veiculo = new Veiculo.Unit();
-                veiculo = veiculo.BuscarFicharioDB(txt_placa.Text, "Veiculo");
-                EscreverFormulario(veiculo);
+                if (txt_placa.Text == "")
+                {
+                    MessageBox.Show("Insira a placa do carro que deseja procurar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Veiculo.Unit veiculo = new Veiculo.Unit();
+                    veiculo = veiculo.BuscarFicharioDB(txt_placa.Text, "Veiculo");
+                    EscreverFormulario(veiculo);
+                }
             }
             catch (Exception ex)
             {

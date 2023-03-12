@@ -231,7 +231,7 @@
             // tool_exluir
             // 
             this.tool_exluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tool_exluir.Image = ((System.Drawing.Image)(resources.GetObject("tool_exluir.Image")));
+            this.tool_exluir.Image = global::MMEstacionamento.Properties.Resources.lixo1;
             this.tool_exluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tool_exluir.Name = "tool_exluir";
             this.tool_exluir.Size = new System.Drawing.Size(23, 22);
