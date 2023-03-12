@@ -45,11 +45,11 @@
             this.dataEntrada = new System.Windows.Forms.Label();
             this.dataSaida = new System.Windows.Forms.Label();
             this.tool_Principal = new System.Windows.Forms.ToolStrip();
-            this.tool_limpar = new System.Windows.Forms.ToolStripButton();
             this.tool_abrir = new System.Windows.Forms.ToolStripButton();
             this.tool_salvar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.tool_limpar = new System.Windows.Forms.ToolStripButton();
             this.tool_exluir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.tool_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,16 +198,6 @@
             this.tool_Principal.TabIndex = 20;
             this.tool_Principal.Text = "toolStrip1";
             // 
-            // tool_limpar
-            // 
-            this.tool_limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tool_limpar.Image = ((System.Drawing.Image)(resources.GetObject("tool_limpar.Image")));
-            this.tool_limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tool_limpar.Name = "tool_limpar";
-            this.tool_limpar.Size = new System.Drawing.Size(23, 22);
-            this.tool_limpar.Text = "&Novo";
-            this.tool_limpar.Click += new System.EventHandler(this.novoToolStripButton_Click);
-            // 
             // tool_abrir
             // 
             this.tool_abrir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -228,10 +218,15 @@
             this.tool_salvar.Text = "&Salvar";
             this.tool_salvar.Click += new System.EventHandler(this.salvarToolStripButton_Click);
             // 
-            // toolStripSeparator
+            // tool_limpar
             // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.tool_limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tool_limpar.Image = ((System.Drawing.Image)(resources.GetObject("tool_limpar.Image")));
+            this.tool_limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tool_limpar.Name = "tool_limpar";
+            this.tool_limpar.Size = new System.Drawing.Size(23, 22);
+            this.tool_limpar.Text = "&Novo";
+            this.tool_limpar.Click += new System.EventHandler(this.novoToolStripButton_Click);
             // 
             // tool_exluir
             // 
@@ -241,6 +236,12 @@
             this.tool_exluir.Name = "tool_exluir";
             this.tool_exluir.Size = new System.Drawing.Size(23, 22);
             this.tool_exluir.Text = "toolStripButton1";
+            this.tool_exluir.Click += new System.EventHandler(this.tool_exluir_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
             // ProcuraVeiculo_UC
             // 

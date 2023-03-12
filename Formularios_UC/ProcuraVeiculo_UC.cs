@@ -119,5 +119,19 @@ namespace MMEstacionamento.Formularios_UC
                 MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void tool_exluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Veiculo.Unit veiculo = new Veiculo.Unit();
+                veiculo.ExcluirFicharioDb(txt_placa.Text, "Veiculo");
+                MessageBox.Show("Veículo removido com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
