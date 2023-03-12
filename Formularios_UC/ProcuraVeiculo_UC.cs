@@ -131,9 +131,27 @@ namespace MMEstacionamento.Formularios_UC
         {
             try
             {
-                Veiculo.Unit veiculo = new Veiculo.Unit();
-                veiculo.ExcluirFicharioDb(txt_placa.Text, "Veiculo");
-                MessageBox.Show("Veículo removido com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txt_placa.Text == "")
+                {
+                    MessageBox.Show("Insira os dados do veículo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Veiculo.Unit veiculo = new Veiculo.Unit();
+                    veiculo = veiculo.BuscarFicharioDB(txt_placa.Text, "Veiculo");
+                    EscreverFormulario(veiculo);
+                    var resp = MessageBox.Show("Deseja realmente deletar o item?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (resp == DialogResult.OK)
+                    {
+                        
+                        veiculo.ExcluirFicharioDb(txt_placa.Text, "Veiculo");
+                        MessageBox.Show("Veículo removido com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Operação cancelada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
             catch (Exception ex)
             {
