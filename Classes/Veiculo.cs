@@ -34,6 +34,8 @@ namespace MMEstacionamento.Classes
 
             public DateTime DataEntrada { get; set; }
 
+            public DateTime GuardaHoraEntrada { get; set; }
+
             public DateTime DataSaida { get; set; }
 
             [Required]

@@ -21,7 +21,6 @@ namespace MMEstacionamento.Formularios_UC
             rb_tipoMoto.Text = "Moto";
         }
 
-
         //Botão que confirma inserção de dados no banco de dados.
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
@@ -59,6 +58,7 @@ namespace MMEstacionamento.Formularios_UC
             v.Modelo = tb_modelo.Text;
             v.Cor = tb_cor.Text;
             v.DataEntrada = DateTime.Now;
+            v.GuardaHoraEntrada = v.DataEntrada;
             if (rb_tipoCarro.Checked)
             {
                 v.TipoVeiculo = TipoVeiculo.Carro;
@@ -74,6 +74,5 @@ namespace MMEstacionamento.Formularios_UC
         {
 
         }
-
     }
 }

@@ -15,6 +15,10 @@ namespace MMEstacionamento.Formularios_UC
         public SaidaVeiculo_UC()
         {
             InitializeComponent();
+            lbl_placa.Text = "Placa";
+            lbl_proprietario.Text = "Proprietário";
+            lbl_modelo.Text = "Modelo";
+            lbl_cor.Text = "Cor";
         }
     }
 }

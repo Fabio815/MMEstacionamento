@@ -31,7 +31,6 @@ namespace MMEstacionamento.DataBase
         }
 
         #region "CRUD"
-
         public void Incluir(string placa, string jsonUnit)
         {
             status = true;
@@ -44,10 +43,10 @@ namespace MMEstacionamento.DataBase
                 db.SQLCommand(SQL);
                 mensagem = $"Veículo adicionado com sucesso! Identificardor: {placa}";
             }
-            catch (Exception ex)
+            catch
             {
                 status = false;
-                mensagem = $"Erro ao adicionar o veículo {ex.Message}";
+                mensagem = $"Erro ao adicionar o veículo, tente outra placa!";
             }
         }
 

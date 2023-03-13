@@ -35,8 +35,6 @@ namespace MMEstacionamento.Formularios_UC
             tool_Principal.Items[3].Text = "Deletar dados do veículo";
         }
 
-
-
         Veiculo.Unit InserirDados()
         {
             Veiculo.Unit vei = new Veiculo.Unit();
@@ -44,6 +42,7 @@ namespace MMEstacionamento.Formularios_UC
             vei.Proprietario = txt_proprietario.Text;
             vei.Modelo= txt_modelo.Text;
             vei.Cor = txt_cor.Text;
+            vei.DataEntrada = vei.GuardaHoraEntrada;
             if (rdb_tipoCarro.Checked)
             {
                 vei.TipoVeiculo = TipoVeiculo.Carro;
