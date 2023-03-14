@@ -73,7 +73,7 @@ namespace MMEstacionamento.Formularios_UC
             }
         }
 
-        private void novoToolStripButton_Click(object sender, EventArgs e)
+        void Limpar()
         {
             txt_placa.Clear();
             txt_proprietario.Clear();
@@ -86,6 +86,11 @@ namespace MMEstacionamento.Formularios_UC
                 rdb_tipoCarro.Checked = false;
                 rdb_tipoMoto.Checked = false;
             }
+        }
+
+        private void novoToolStripButton_Click(object sender, EventArgs e)
+        {
+            Limpar();
         }
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
@@ -128,7 +133,6 @@ namespace MMEstacionamento.Formularios_UC
                 {
                     Veiculo.Unit veiculo = new Veiculo.Unit();
                     veiculo = InserirDados();
-
                     veiculo.AlterarFichaDB(txt_placa.Text, "Veiculo");
                     MessageBox.Show("Dados atualizados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -158,6 +162,7 @@ namespace MMEstacionamento.Formularios_UC
                         
                         veiculo.ExcluirFicharioDb(txt_placa.Text, "Veiculo");
                         MessageBox.Show("Veículo removido com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpar();
                     }
                     else
                     {

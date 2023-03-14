@@ -48,6 +48,16 @@ namespace MMEstacionamento.Formularios_UC
             
         }
 
+        void Limpar()
+        {
+            txt_placa.Text = "";
+            txt_proprietario.Text = "";
+            txt_modelo.Text = "";
+            txt_cor.Text = "";
+            lbl_dataEntrada.Text = "";
+            lbl_tipoVeiculo.Text = "";
+        }
+
         void SaidaVeiculo(Veiculo.Unit veiculo)
         {
             //Aqui estou declarando a saída do usuário.
@@ -107,6 +117,18 @@ namespace MMEstacionamento.Formularios_UC
                     else
                     {
                         EscreverFormulario(veicu);
+                        SaidaVeiculo(veicu);
+                        var result = MessageBox.Show($"Total a pagar {valorCobrado:c}, deseja realmente cadastrar sua saída? ", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (result == DialogResult.OK)
+                        {
+                            veicu.ExcluirFicharioDb(veicu.Placa, "Veiculo");
+                            MessageBox.Show("Saída cadastrada com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Operação cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
