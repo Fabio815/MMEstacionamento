@@ -14,6 +14,7 @@ namespace MMEstacionamento.Classes
     {
         public class Unit
         {
+
             [Key]
             [Required(ErrorMessage = "Placa é obrigatório.")]
             [StringLength(8, ErrorMessage = "A placa deve conter 8 dígitos.")]

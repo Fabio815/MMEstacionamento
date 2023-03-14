@@ -73,7 +73,6 @@ namespace MMEstacionamento.Formularios_UC
             }
         }
 
-
         private void novoToolStripButton_Click(object sender, EventArgs e)
         {
             txt_placa.Clear();
@@ -101,12 +100,19 @@ namespace MMEstacionamento.Formularios_UC
                 {
                     Veiculo.Unit veiculo = new Veiculo.Unit();
                     veiculo = veiculo.BuscarFicharioDB(txt_placa.Text, "Veiculo");
-                    EscreverFormulario(veiculo);
+                    if (veiculo == null)
+                    {
+                        MessageBox.Show("Veículo não encontrado... Tente outro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        EscreverFormulario(veiculo);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Veículo não encontrado... Erro {ex.Message}");
+                MessageBox.Show($"Erro {ex.Message}");
             }
         }
 
@@ -114,11 +120,18 @@ namespace MMEstacionamento.Formularios_UC
         {
             try
             {
-                Veiculo.Unit veiculo = new Veiculo.Unit();
-                veiculo = InserirDados();
+                if (txt_placa.Text == "" || txt_proprietario.Text == "" || txt_modelo.Text == "" || txt_cor.Text == "" || rdb_tipoCarro.Checked == false && rdb_tipoMoto.Checked == false)
+                {
+                    MessageBox.Show("Preencha os campos do formulário", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Veiculo.Unit veiculo = new Veiculo.Unit();
+                    veiculo = InserirDados();
 
-                veiculo.AlterarFichaDB(txt_placa.Text, "Veiculo");
-                MessageBox.Show("Dados atualizados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    veiculo.AlterarFichaDB(txt_placa.Text, "Veiculo");
+                    MessageBox.Show("Dados atualizados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
