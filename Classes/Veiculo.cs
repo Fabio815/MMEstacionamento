@@ -115,6 +115,38 @@ namespace MMEstacionamento.Classes
                     throw new Exception(fichario.mensagem);
                 }
             }
+
+            //Esse método vai retornar uma lista bidimensional.
+            public List<List<string>> BuscaFicharioTodos(string conexao)
+            {
+                FicharioDB fichario = new FicharioDB(conexao);
+                if (fichario.status)
+                {
+                    //Essa lista de string vai guardar os dados armazenados na função BuscaTodos.
+                    List<string> lista = new List<string>();
+                    lista = fichario.BuscarTodos();
+                    if (fichario.status)
+                    {
+                        //Essa lista vai retornar a Placa e o proprietário do veículo.
+                        List<List<string>> ls = new List<List<string>>();
+                        for (int i = 0; i < lista.Count; i++)
+                        {
+                            //Aqui a variável v estou transformando o JSON em classe, conforme sua posição.
+                            Veiculo.Unit v = Veiculo.DesSerializedClassUnit(lista[i]);
+                            ls.Add(new List<string> { v.Placa, v.Proprietario});
+                        }
+                        return ls;
+                    }
+                    else
+                    {
+                        throw new Exception(fichario.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(fichario.mensagem);
+                }
+            }
             #endregion
         }
 

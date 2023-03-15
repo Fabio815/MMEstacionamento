@@ -33,6 +33,10 @@ namespace MMEstacionamento.Formularios_UC
             tool_Principal.Items[1].Text = "Alterar veículo";
             tool_Principal.Items[2].Text = "Limpar formulário";
             tool_Principal.Items[3].Text = "Deletar dados do veículo";
+            gb_formulario.Text = "Dados do veículo";
+            gb_listaDeVeiculos.Text = "Lista de veículos";
+
+            AtualizaGrid();
         }
 
         Veiculo.Unit InserirDados()
@@ -168,6 +172,36 @@ namespace MMEstacionamento.Formularios_UC
                     {
                         MessageBox.Show("Operação cancelada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AtualizaGrid()
+        {
+            try
+            {
+                Veiculo.Unit v = new Veiculo.Unit();
+                var listBusca = v.BuscaFicharioTodos("Veiculo");
+                dataGrid_ListaVeiculos.Rows.Clear();
+
+                for (int i = 0; i < listBusca.Count - 1; i++)
+                {
+                    //Instanciando um grid do tipo formulario.
+                    DataGridViewRow dataGrid = new DataGridViewRow();
+                    //É como se estivesse criando celulas dentro dessa linha.
+                    //Grid do Formulário.
+                    dataGrid.CreateCells(dataGrid_ListaVeiculos);
+                    //Nessas celulas vou escrever.
+                    //To pegando a celula da coluna [0] e adicionando um valor. Na posição i na coluna 0. Que no caso vai pegar o ID.
+                    dataGrid.Cells[0].Value = listBusca[i][0].ToString();
+                    //To pegando a celula da coluna [0] e adicionando um valor. Na posição i na coluna 1. Que no caso vai pegar o Nome.
+                    dataGrid.Cells[1].Value = listBusca[i][1].ToString();
+                    //Vou adicionar dentro do Grid a linha.
+                    dataGrid_ListaVeiculos.Rows.Add(dataGrid);
                 }
             }
             catch (Exception ex)
