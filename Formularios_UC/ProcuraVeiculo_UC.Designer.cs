@@ -58,10 +58,10 @@
             this.veiculoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.veiculoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGrid_ListaVeiculos = new System.Windows.Forms.DataGridView();
-            this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JSON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_formulario = new System.Windows.Forms.GroupBox();
             this.gb_listaDeVeiculos = new System.Windows.Forms.GroupBox();
+            this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JSON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tool_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDEstacionamentoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.veiculoBindingSource)).BeginInit();
@@ -214,7 +214,7 @@
             this.toolStripSeparator});
             this.tool_Principal.Location = new System.Drawing.Point(0, 0);
             this.tool_Principal.Name = "tool_Principal";
-            this.tool_Principal.Size = new System.Drawing.Size(878, 25);
+            this.tool_Principal.Size = new System.Drawing.Size(779, 25);
             this.tool_Principal.TabIndex = 20;
             this.tool_Principal.Text = "toolStrip1";
             // 
@@ -295,28 +295,17 @@
             // 
             this.dataGrid_ListaVeiculos.AllowUserToAddRows = false;
             this.dataGrid_ListaVeiculos.AllowUserToDeleteRows = false;
+            this.dataGrid_ListaVeiculos.AllowUserToOrderColumns = true;
             this.dataGrid_ListaVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_ListaVeiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Placa,
             this.JSON});
-            this.dataGrid_ListaVeiculos.Location = new System.Drawing.Point(29, 34);
+            this.dataGrid_ListaVeiculos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGrid_ListaVeiculos.Location = new System.Drawing.Point(3, 16);
             this.dataGrid_ListaVeiculos.Name = "dataGrid_ListaVeiculos";
             this.dataGrid_ListaVeiculos.ReadOnly = true;
-            this.dataGrid_ListaVeiculos.Size = new System.Drawing.Size(395, 219);
+            this.dataGrid_ListaVeiculos.Size = new System.Drawing.Size(339, 253);
             this.dataGrid_ListaVeiculos.TabIndex = 21;
-            // 
-            // Placa
-            // 
-            this.Placa.HeaderText = "Placa";
-            this.Placa.Name = "Placa";
-            this.Placa.ReadOnly = true;
-            // 
-            // JSON
-            // 
-            this.JSON.HeaderText = "Dados do veículo";
-            this.JSON.Name = "JSON";
-            this.JSON.ReadOnly = true;
-            this.JSON.Width = 250;
             // 
             // gb_formulario
             // 
@@ -347,10 +336,23 @@
             this.gb_listaDeVeiculos.Controls.Add(this.dataGrid_ListaVeiculos);
             this.gb_listaDeVeiculos.Location = new System.Drawing.Point(420, 38);
             this.gb_listaDeVeiculos.Name = "gb_listaDeVeiculos";
-            this.gb_listaDeVeiculos.Size = new System.Drawing.Size(452, 272);
+            this.gb_listaDeVeiculos.Size = new System.Drawing.Size(345, 272);
             this.gb_listaDeVeiculos.TabIndex = 23;
             this.gb_listaDeVeiculos.TabStop = false;
             this.gb_listaDeVeiculos.Text = "groupBox2";
+            // 
+            // Placa
+            // 
+            this.Placa.HeaderText = "Placa";
+            this.Placa.Name = "Placa";
+            this.Placa.ReadOnly = true;
+            // 
+            // JSON
+            // 
+            this.JSON.HeaderText = "Proprietário";
+            this.JSON.Name = "JSON";
+            this.JSON.ReadOnly = true;
+            this.JSON.Width = 195;
             // 
             // ProcuraVeiculo_UC
             // 
@@ -360,7 +362,7 @@
             this.Controls.Add(this.gb_formulario);
             this.Controls.Add(this.tool_Principal);
             this.Name = "ProcuraVeiculo_UC";
-            this.Size = new System.Drawing.Size(878, 333);
+            this.Size = new System.Drawing.Size(779, 333);
             this.tool_Principal.ResumeLayout(false);
             this.tool_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDEstacionamentoDataSet)).EndInit();
@@ -409,9 +411,9 @@
         private System.Windows.Forms.BindingSource veiculoBindingSource2;
 
         private System.Windows.Forms.DataGridView dataGrid_ListaVeiculos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Placa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JSON;
         private System.Windows.Forms.GroupBox gb_formulario;
         private System.Windows.Forms.GroupBox gb_listaDeVeiculos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Placa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JSON;
     }
 }

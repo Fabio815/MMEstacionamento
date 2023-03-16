@@ -19,7 +19,7 @@ namespace MMEstacionamento.Formularios_UC
             btn_confirmar.Text = "Confirmar";
             rb_tipoCarro.Text = "Carro";
             rb_tipoMoto.Text = "Moto";
-            gb_cadastro.Text = "Formulário de cadastro1'";
+            gb_cadastro.Text = "Formulário de cadastro";
         }
 
         //Botão que confirma inserção de dados no banco de dados.
@@ -42,6 +42,8 @@ namespace MMEstacionamento.Formularios_UC
                     veic.IncluirFicharioDB("Veiculo");
                     //Mensagem de sucesso.
                     MessageBox.Show("Veículo cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ProcuraVeiculo_UC pro = new ProcuraVeiculo_UC();
+                    pro.AtualizaGrid();
                 }
             }
             //Caso não dê bom vamos gerar uma excessão.

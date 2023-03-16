@@ -37,6 +37,7 @@ namespace MMEstacionamento.Formularios_UC
             gb_listaDeVeiculos.Text = "Lista de veículos";
 
             AtualizaGrid();
+            Limpar();
         }
 
         Veiculo.Unit InserirDados()
@@ -139,6 +140,7 @@ namespace MMEstacionamento.Formularios_UC
                     veiculo = InserirDados();
                     veiculo.AlterarFichaDB(txt_placa.Text, "Veiculo");
                     MessageBox.Show("Dados atualizados com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizaGrid();
                 }
             }
             catch (Exception ex)
@@ -163,10 +165,10 @@ namespace MMEstacionamento.Formularios_UC
                     var resp = MessageBox.Show("Deseja realmente deletar o item?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (resp == DialogResult.OK)
                     {
-                        
                         veiculo.ExcluirFicharioDb(txt_placa.Text, "Veiculo");
                         MessageBox.Show("Veículo removido com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpar();
+                        AtualizaGrid();
                     }
                     else
                     {
@@ -180,7 +182,7 @@ namespace MMEstacionamento.Formularios_UC
             }
         }
 
-        private void AtualizaGrid()
+        public void AtualizaGrid()
         {
             try
             {
@@ -188,7 +190,7 @@ namespace MMEstacionamento.Formularios_UC
                 var listBusca = v.BuscaFicharioTodos("Veiculo");
                 dataGrid_ListaVeiculos.Rows.Clear();
 
-                for (int i = 0; i < listBusca.Count - 1; i++)
+                for (int i = 0; i <= listBusca.Count - 1; i++)
                 {
                     //Instanciando um grid do tipo formulario.
                     DataGridViewRow dataGrid = new DataGridViewRow();

@@ -138,12 +138,12 @@ namespace MMEstacionamento.DataBase
             {
                 //Conferencia para ver se tem dados no banco.
                 //SELECT Placa, JSON FROM [TABELA]
-                string SQL = "SELECT Placa, JSON FROM " + tabela;
+                var SQL = "SELECT Placa, JSON FROM " + tabela;
                 var dt = db.SQLQuery(SQL);
                 if (dt.Rows.Count > 0)
                 {
                     //Aqui vamos fazer uma estrutura de repetição, para colocar dentro da lista os dados do banco.
-                    for (int i = 0; i < dt.Rows.Count - 1; i++)
+                    for (int i = 0; i <= dt.Rows.Count - 1; i++)
                     {
                         //Estamos pegando a placa conforme o for e o seus dados respectivamente.
                         string conteudo = dt.Rows[i]["JSON"].ToString();

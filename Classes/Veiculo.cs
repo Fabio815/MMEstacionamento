@@ -129,7 +129,7 @@ namespace MMEstacionamento.Classes
                     {
                         //Essa lista vai retornar a Placa e o proprietário do veículo.
                         List<List<string>> ls = new List<List<string>>();
-                        for (int i = 0; i < lista.Count; i++)
+                        for (int i = 0; i <= lista.Count - 1; i++)
                         {
                             //Aqui a variável v estou transformando o JSON em classe, conforme sua posição.
                             Veiculo.Unit v = Veiculo.DesSerializedClassUnit(lista[i]);
