@@ -13,3 +13,10 @@ alteração no banco), SqlQuery(comando que vai executar busca no banco) e Close
   status(se as ações deu certo ao não), tabela(é a tabela que quero mexer) e db(conexão com o banco). Também vou ter o CRUD.
   
   Veiculo -> Nessa Classe terá o Desseralize, Serializa, atributos do veículo e a chamada do CRUD da FicharioDB, com isso nos podemos manipular os atributos do veículo.
+Desselize vai transformar a classe em JSON.
+Serialize vai transformar o JSON em classe.
+
+  E por ultimo temos os formularios_uc, que vão puxar chamar a classe Veiculo.
+  
+  formularios_uc <- Veiculo <- FicharioDB <- SqlServerClass.
+  
