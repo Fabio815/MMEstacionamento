@@ -80,7 +80,7 @@ namespace MMEstacionamento.Formularios_UC
                 {
                     valorCobrado = 40.00;
                 }
-                if (Math.Ceiling(tempoPermanecido.TotalHours) > 5)
+                if (Math.Ceiling(tempoPermanecido.TotalMinutes) > 300)
                 {
                     valorCobrado = Math.Ceiling(tempoPermanecido.TotalHours) * 1.50;
                 }
@@ -99,7 +99,7 @@ namespace MMEstacionamento.Formularios_UC
                 {
                     valorCobrado = 26.00;
                 }
-                if (Math.Ceiling(tempoPermanecido.TotalHours) > 5)
+                if (Math.Ceiling(tempoPermanecido.TotalMinutes) > 300)
                 {
                     valorCobrado = Math.Ceiling(tempoPermanecido.TotalHours) * 1.00;
                 }
