@@ -80,6 +80,10 @@ namespace MMEstacionamento.Formularios_UC
                 {
                     valorCobrado = 40.00;
                 }
+                if (Math.Ceiling(tempoPermanecido.TotalHours) > 5)
+                {
+                    valorCobrado = Math.Ceiling(tempoPermanecido.TotalHours) * 1.50;
+                }
             }
             else if(veiculo.TipoVeiculo == TipoVeiculo.Moto)
             {
@@ -94,6 +98,10 @@ namespace MMEstacionamento.Formularios_UC
                 if (Math.Ceiling(tempoPermanecido.TotalMinutes) > 120 && Math.Ceiling(tempoPermanecido.TotalMinutes) <= 300)
                 {
                     valorCobrado = 26.00;
+                }
+                if (Math.Ceiling(tempoPermanecido.TotalHours) > 5)
+                {
+                    valorCobrado = Math.Ceiling(tempoPermanecido.TotalHours) * 1.00;
                 }
             }
         }
