@@ -25,7 +25,8 @@ namespace MMEstacionamento.Formularios_UC
             lbl_data.Text = "Data de entrada";
             lbl_dataEntrada.Visible = false;
             lbl_tipoVeiculo.Visible = false;
-
+            gb_formulario.Text = "Formulário";
+            gb_lisaVeiculos.Text = "Lista de veículos";
 
             toolStrip1.Items[0].Text = "Procurar carro";
             toolStrip1.Items[1].Text = "Registrar saída";
