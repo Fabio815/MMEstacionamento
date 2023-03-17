@@ -58,10 +58,11 @@
             this.veiculoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.veiculoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGrid_ListaVeiculos = new System.Windows.Forms.DataGridView();
-            this.gb_formulario = new System.Windows.Forms.GroupBox();
-            this.gb_listaDeVeiculos = new System.Windows.Forms.GroupBox();
             this.Placa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JSON = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gb_formulario = new System.Windows.Forms.GroupBox();
+            this.gb_listaDeVeiculos = new System.Windows.Forms.GroupBox();
+            this.bnt_atualizar = new System.Windows.Forms.Button();
             this.tool_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bDEstacionamentoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.veiculoBindingSource)).BeginInit();
@@ -307,6 +308,19 @@
             this.dataGrid_ListaVeiculos.Size = new System.Drawing.Size(339, 253);
             this.dataGrid_ListaVeiculos.TabIndex = 21;
             // 
+            // Placa
+            // 
+            this.Placa.HeaderText = "Placa";
+            this.Placa.Name = "Placa";
+            this.Placa.ReadOnly = true;
+            // 
+            // JSON
+            // 
+            this.JSON.HeaderText = "Proprietário";
+            this.JSON.Name = "JSON";
+            this.JSON.ReadOnly = true;
+            this.JSON.Width = 195;
+            // 
             // gb_formulario
             // 
             this.gb_formulario.Controls.Add(this.txt_placa);
@@ -341,23 +355,21 @@
             this.gb_listaDeVeiculos.TabStop = false;
             this.gb_listaDeVeiculos.Text = "groupBox2";
             // 
-            // Placa
+            // bnt_atualizar
             // 
-            this.Placa.HeaderText = "Placa";
-            this.Placa.Name = "Placa";
-            this.Placa.ReadOnly = true;
-            // 
-            // JSON
-            // 
-            this.JSON.HeaderText = "Proprietário";
-            this.JSON.Name = "JSON";
-            this.JSON.ReadOnly = true;
-            this.JSON.Width = 195;
+            this.bnt_atualizar.Location = new System.Drawing.Point(665, 9);
+            this.bnt_atualizar.Name = "bnt_atualizar";
+            this.bnt_atualizar.Size = new System.Drawing.Size(100, 23);
+            this.bnt_atualizar.TabIndex = 24;
+            this.bnt_atualizar.Text = "button1";
+            this.bnt_atualizar.UseVisualStyleBackColor = true;
+            this.bnt_atualizar.Click += new System.EventHandler(this.bnt_atualizar_Click);
             // 
             // ProcuraVeiculo_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bnt_atualizar);
             this.Controls.Add(this.gb_listaDeVeiculos);
             this.Controls.Add(this.gb_formulario);
             this.Controls.Add(this.tool_Principal);
@@ -415,5 +427,6 @@
         private System.Windows.Forms.GroupBox gb_listaDeVeiculos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Placa;
         private System.Windows.Forms.DataGridViewTextBoxColumn JSON;
+        private System.Windows.Forms.Button bnt_atualizar;
     }
 }

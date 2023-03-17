@@ -28,6 +28,7 @@ namespace MMEstacionamento.Formularios_UC
             lbl_tipoVeiculo.Text = "Tipo do veículo";
             dataEntrada.Visible = false;
             dataSaida.Visible = false;
+            bnt_atualizar.Text = "Atualizar lista";
 
             tool_Principal.Items[0].Text = "Buscar veículo";
             tool_Principal.Items[1].Text = "Alterar veículo";
@@ -210,6 +211,11 @@ namespace MMEstacionamento.Formularios_UC
             {
                 MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void bnt_atualizar_Click(object sender, EventArgs e)
+        {
+            AtualizaGrid();
         }
     }
 }
