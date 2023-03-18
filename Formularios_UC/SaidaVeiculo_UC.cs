@@ -30,6 +30,8 @@ namespace MMEstacionamento.Formularios_UC
 
             toolStrip1.Items[0].Text = "Procurar carro";
             toolStrip1.Items[1].Text = "Registrar saída";
+
+            AtualizaGrid();
         }
 
         void EscreverFormulario(Veiculo.Unit escreva)
@@ -132,6 +134,7 @@ namespace MMEstacionamento.Formularios_UC
                         {
                             veicu.ExcluirFicharioDb(veicu.Placa, "Veiculo");
                             MessageBox.Show("Saída cadastrada com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AtualizaGrid();
                             Limpar();
                         }
                         else
@@ -139,6 +142,32 @@ namespace MMEstacionamento.Formularios_UC
                             MessageBox.Show("Operação cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        void AtualizaGrid() 
+        {
+            try
+            {
+                Veiculo.Unit vei = new Veiculo.Unit();
+                var lista = vei.BuscaFicharioTodos("Veiculo");
+                dataGrid_listaVeiculo.Rows.Clear();
+
+                for (int i = 0; i <= lista.Count - 1; i++)
+                {
+                    DataGridViewRow datagrid = new DataGridViewRow();
+                    datagrid.CreateCells(dataGrid_listaVeiculo);
+
+                    datagrid.Cells[0].Value = lista[i][0].ToString();
+                    datagrid.Cells[1].Value = lista[i][1].ToString();
+
+                    dataGrid_listaVeiculo.Rows.Add(datagrid);
+
                 }
             }
             catch (Exception ex)
