@@ -73,7 +73,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDEstacionamentoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Patio.cs" />
+    <Compile Include="Classes\Patio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Classes\TipoVeiculo.cs" />
     <Compile Include="Classes\Veiculo.cs" />
     <Compile Include="DataBase\FicharioDB.cs" />
