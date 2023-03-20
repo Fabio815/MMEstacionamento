@@ -50,7 +50,7 @@ namespace MMEstacionamento.Formularios_UC
         {
             
         }
-
+        
         void Limpar()
         {
             txt_placa.Text = "";
@@ -107,6 +107,7 @@ namespace MMEstacionamento.Formularios_UC
                     valorCobrado = Math.Ceiling(tempoPermanecido.TotalHours) * 1.00;
                 }
             }
+            veiculo.valorCobrado = valorCobrado;
         }
 
         private void colarToolStripButton_Click(object sender, EventArgs e)

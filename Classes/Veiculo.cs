@@ -42,6 +42,8 @@ namespace MMEstacionamento.Classes
             [Required]
             public TipoVeiculo TipoVeiculo { get; set; }
 
+            public double valorCobrado { get; set; }
+
             #region "CRUD LOCAL DB"
 
             public void IncluirFicharioDB(string conexao)

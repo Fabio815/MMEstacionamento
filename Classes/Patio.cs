@@ -8,6 +8,6 @@ namespace MMEstacionamento.Classes
 {
     public class Patio
     {
-
+        
     }
 }
