@@ -92,6 +92,12 @@
     <Compile Include="Formularios_UC\Cadastro_UC.Designer.cs">
       <DependentUpon>Cadastro_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios_UC\Faturamento_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios_UC\Faturamento_UC.Designer.cs">
+      <DependentUpon>Faturamento_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios_UC\ListaVeiculos_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios_UC\Cadastro_UC.resx">
       <DependentUpon>Cadastro_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_UC\Faturamento_UC.resx">
+      <DependentUpon>Faturamento_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios_UC\ProcuraVeiculo_UC.resx">
       <DependentUpon>ProcuraVeiculo_UC.cs</DependentUpon>

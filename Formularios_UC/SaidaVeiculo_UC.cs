@@ -182,7 +182,9 @@ namespace MMEstacionamento.Formularios_UC
         }
         public double MostrarValor(double valor)
         {
-            return Total += valor;
+            Total += valor;
+            Veiculo.Unit vei = new Veiculo.Unit();
+            return vei.faturamentoTotal = valor;
         }
     }
 }

@@ -22,6 +22,17 @@ namespace MMEstacionamento.Formularios_UC
             gb_cadastro.Text = "Formulário de cadastro";
         }
 
+        void LimparFormulario()
+        {
+            tb_proprietario.Clear();
+            tb_placa.Clear();
+            tb_modelo.Clear();
+            tb_cor.Clear();
+            rb_tipoCarro.Checked = false;
+            rb_tipoMoto.Checked = false;
+            
+        }
+
         //Botão que confirma inserção de dados no banco de dados.
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
@@ -43,6 +54,7 @@ namespace MMEstacionamento.Formularios_UC
                     //Mensagem de sucesso.
                     MessageBox.Show("Veículo cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ProcuraVeiculo_UC pro = new ProcuraVeiculo_UC();
+                    LimparFormulario();
                     pro.AtualizaGrid();
                 }
             }

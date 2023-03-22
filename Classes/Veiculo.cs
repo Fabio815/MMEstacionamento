@@ -44,6 +44,8 @@ namespace MMEstacionamento.Classes
 
             public double valorCobrado { get; set; }
 
+            public double faturamentoTotal { get; set; }
+
             #region "CRUD LOCAL DB"
 
             public void IncluirFicharioDB(string conexao)

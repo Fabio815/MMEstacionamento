@@ -119,6 +119,7 @@
             this.faturamentoToolStripMenuItem.Name = "faturamentoToolStripMenuItem";
             this.faturamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.faturamentoToolStripMenuItem.Text = "Faturamento";
+            this.faturamentoToolStripMenuItem.Click += new System.EventHandler(this.faturamentoToolStripMenuItem_Click);
             // 
             // F_principal
             // 

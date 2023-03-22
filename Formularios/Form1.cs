@@ -104,6 +104,15 @@ namespace MMEstacionamento
                 MessageBox.Show("Aba de saída de veículo já esta aberta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        private void faturamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Faturamento_UC fatu = new Faturamento_UC();
+            TabPage tab = new TabPage();
+            tab.Name = "faturamento";
+            tab.Text = "Faturamento";
+            tab.Controls.Add(fatu);
+            tab_principal.TabPages.Add(tab);
+        }
         #endregion
 
         #region "Menu Flutuante"
