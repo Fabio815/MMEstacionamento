@@ -14,7 +14,6 @@ namespace MMEstacionamento.Formularios_UC
     public partial class SaidaVeiculo_UC : UserControl
     {
         public double valorCobrado = 0;
-        public double Total { get; set; }
         public SaidaVeiculo_UC()
         {
             InitializeComponent();
@@ -121,6 +120,7 @@ namespace MMEstacionamento.Formularios_UC
                 }
                 else
                 {
+                    Faturamento_UC patio = new Faturamento_UC();
                     Veiculo.Unit veicu = new Veiculo.Unit();
                     veicu = veicu.BuscarFicharioDB(txt_placa.Text, "Veiculo");
                     if (veicu == null)
@@ -134,7 +134,7 @@ namespace MMEstacionamento.Formularios_UC
                         var result = MessageBox.Show($"Total a pagar {valorCobrado:c}, deseja realmente cadastrar sua saída? ", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (result == DialogResult.OK)
                         {
-                            MostrarValor(veicu.valorCobrado);
+                            patio.CalculoFaturamento(valorCobrado);
                             veicu.ExcluirFicharioDb(veicu.Placa, "Veiculo");
                             MessageBox.Show("Saída cadastrada com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             AtualizaGrid();
@@ -177,14 +177,6 @@ namespace MMEstacionamento.Formularios_UC
             {
                 MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
-        }
-        public double MostrarValor(double valor)
-        {
-            Total += valor;
-            Veiculo.Unit vei = new Veiculo.Unit();
-            return vei.faturamentoTotal = valor;
         }
     }
 }

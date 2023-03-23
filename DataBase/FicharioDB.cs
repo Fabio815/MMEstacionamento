@@ -161,6 +161,20 @@ namespace MMEstacionamento.DataBase
             return list;
         }
 
+        public void Faturamento(int id, string faturamento)
+        {
+            status = true;
+            try
+            {
+                string SQL = "INSERT INTO " + tabela + " (Id, Faturamento) VALUES (" + id + ", '" + faturamento + "')";
+                db.SQLCommand(SQL);
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = ex.Message;
+            }
+        }
         #endregion
     }
 }

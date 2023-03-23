@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MMEstacionamento.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace MMEstacionamento.Formularios_UC
 {
     public partial class ListaVeiculos_UC : UserControl
     {
+
         public ListaVeiculos_UC()
         {
             InitializeComponent();
