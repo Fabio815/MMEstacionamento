@@ -73,8 +73,8 @@ namespace MMEstacionamento.DataBase
                     status = false;
                     mensagem = "Item não encontrado... Tente outro";
                 }
-            } 
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 status = false;
                 mensagem = $"Erro ao procurar os dados do veículo! Erro: {ex.Message}";
@@ -160,6 +160,7 @@ namespace MMEstacionamento.DataBase
             }
             return list;
         }
+        #endregion
 
         public void Faturamento(int id, string faturamento)
         {
@@ -175,6 +176,20 @@ namespace MMEstacionamento.DataBase
                 mensagem = ex.Message;
             }
         }
-        #endregion
+
+        public void UpdateFaturamento(int id, string JSON)
+        {
+            status = true;
+            try
+            {
+                string SQL = "UPDATE " + tabela + " SET Faturamento = '" + JSON + "' WHERE Id = " + id + "";
+                db.SQLCommand(SQL);
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                mensagem = ex.Message;
+            }
+        }
     }
 }

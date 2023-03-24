@@ -38,6 +38,24 @@ namespace MMEstacionamento.Classes
                     throw new Exception(f.mensagem);
                 }
             }
+
+            public void PatioAlterar(string conexao)
+            {
+                string vJosn = Patio.SerializeClassUnit(this);
+                FicharioDB f = new FicharioDB(conexao);
+                if (f.status)
+                {
+                    f.UpdateFaturamento(this.Id ,vJosn);
+                    if (!f.status)
+                    {
+                        throw new Exception(f.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(f.mensagem);
+                }
+            }
         }
 
         public static Unit DesSerializedClassUnit(string vJson)

@@ -14,38 +14,10 @@ namespace MMEstacionamento.Formularios_UC
 {
     public partial class Faturamento_UC : UserControl
     {
-        public double valor { get; set; }
+        public double valor = 0;
         public Faturamento_UC()
         {
             InitializeComponent();
-            Patio.Unit patio = new Patio.Unit();
-            patio = fato();
-
-            patio.PatioAdicionar("Patio");
-        }
-         
-        public void CalculoFaturamento(double valorCobrado)
-        {
-            valor = valorCobrado;
-        }
-        
-        Patio.Unit fato()
-        {
-            Patio.Unit patio = new Patio.Unit();
-            patio.Id = 1;
-            if (Information.IsNumeric(valor))
-            {
-                Double faturamento = Convert.ToDouble(this.valor);
-                if (faturamento < 0)
-                {
-                    patio.Faturamento = 0;
-                }
-                else
-                {
-                    patio.Faturamento = this.valor;
-                }
-            }
-            return patio;
         }
     }
 }

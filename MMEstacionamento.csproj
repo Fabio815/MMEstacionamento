@@ -181,7 +181,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Imagens\DeleteAll.png" />
+    <Content Include="Imagens\DeleteLeft.png" />
+    <Content Include="Imagens\DeleteRight.png" />
+    <Content Include="Imagens\DeleteTab.png" />
+    <Content Include="Imagens\janela-fechada.png" />
     <Content Include="Imagens\lixo.png" />
+    <Content Include="janela-fechada.png" />
     <None Include="Resources\lixo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

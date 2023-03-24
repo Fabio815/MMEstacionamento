@@ -1,4 +1,5 @@
-﻿using MMEstacionamento.Classes;
+﻿using Microsoft.VisualBasic;
+using MMEstacionamento.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,9 @@ namespace MMEstacionamento.Formularios_UC
             AtualizaGrid();
         }
 
+        #region "Registra saída de veículo"
+
+        #region "Métodos auxiliares"
         void EscreverFormulario(Veiculo.Unit escreva)
         {
             txt_proprietario.Text = escreva.Proprietario;
@@ -46,11 +50,6 @@ namespace MMEstacionamento.Formularios_UC
             lbl_dataEntrada.Text = escreva.GuardaHoraEntrada.ToString();
         }
 
-        private void abrirToolStripButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-        
         void Limpar()
         {
             txt_placa.Text = "";
@@ -88,7 +87,7 @@ namespace MMEstacionamento.Formularios_UC
                     valorCobrado = Math.Ceiling(tempoPermanecido.TotalHours) * 1.50;
                 }
             }
-            else if(veiculo.TipoVeiculo == TipoVeiculo.Moto)
+            else if (veiculo.TipoVeiculo == TipoVeiculo.Moto)
             {
                 if (Math.Ceiling(tempoPermanecido.TotalMinutes) > 15 && Math.Ceiling(tempoPermanecido.TotalMinutes) <= 60)
                 {
@@ -110,50 +109,7 @@ namespace MMEstacionamento.Formularios_UC
             veiculo.valorCobrado = valorCobrado;
         }
 
-        private void colarToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txt_placa.Text == "")
-                {
-                    MessageBox.Show("Preencha o campo da placa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    Faturamento_UC patio = new Faturamento_UC();
-                    Veiculo.Unit veicu = new Veiculo.Unit();
-                    veicu = veicu.BuscarFicharioDB(txt_placa.Text, "Veiculo");
-                    if (veicu == null)
-                    {
-                        MessageBox.Show("Veículo não encontrado... Tente outro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        EscreverFormulario(veicu);
-                        SaidaVeiculo(veicu);
-                        var result = MessageBox.Show($"Total a pagar {valorCobrado:c}, deseja realmente cadastrar sua saída? ", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                        if (result == DialogResult.OK)
-                        {
-                            patio.CalculoFaturamento(valorCobrado);
-                            veicu.ExcluirFicharioDb(veicu.Placa, "Veiculo");
-                            MessageBox.Show("Saída cadastrada com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            AtualizaGrid();
-                            Limpar();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Operação cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        void AtualizaGrid() 
+        void AtualizaGrid()
         {
             try
             {
@@ -177,6 +133,92 @@ namespace MMEstacionamento.Formularios_UC
             {
                 MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+        Patio.Unit EscreverPatio(double valor)
+        {
+            Patio.Unit patio = new Patio.Unit();
+            patio.Id = 1;
+
+            if (Information.IsNumeric(valor))
+            {
+                Double faturamento = Convert.ToDouble(valor);
+                if (faturamento < 0)
+                {
+                    patio.Faturamento = 0;
+                }
+                else
+                {
+                    patio.Faturamento += valorCobrado;
+                }
+            }
+            return patio;
+        }
+
+
+
+        #endregion
+
+        private void colarToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txt_placa.Text == "")
+                {
+                    MessageBox.Show("Preencha o campo da placa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Patio.Unit patio = new Patio.Unit();
+                    Veiculo.Unit veicu = new Veiculo.Unit();
+                    veicu = veicu.BuscarFicharioDB(txt_placa.Text, "Veiculo");
+                    if (veicu == null)
+                    {
+                        MessageBox.Show("Veículo não encontrado... Tente outro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        EscreverFormulario(veicu);
+                        SaidaVeiculo(veicu);
+                        var result = MessageBox.Show($"Total a pagar {valorCobrado:c}, deseja realmente cadastrar sua saída? ", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (result == DialogResult.OK)
+                        {
+                            //Caso o patio ainda não tenha um identificador, vamos adicionar.
+                            if (patio == null)
+                            {
+                                //Jogando o total do pagamento na tabela do Patio.
+                                patio = EscreverPatio(valorCobrado);
+                                patio.PatioAdicionar("Patio");
+                            }
+                            else
+                            {
+                                patio = EscreverPatio(valorCobrado);
+                                patio.PatioAlterar("Patio");
+                            }
+
+                            //Concluindo a exclusão do veículo.
+                            veicu.ExcluirFicharioDb(veicu.Placa, "Veiculo");
+                            MessageBox.Show("Saída cadastrada com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AtualizaGrid();
+                            Limpar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Operação cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        private void abrirToolStripButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

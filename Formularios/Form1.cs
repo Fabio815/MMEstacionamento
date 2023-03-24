@@ -118,10 +118,12 @@ namespace MMEstacionamento
         #region "Menu Flutuante"
 
         #region "Métodos Auxiliares"
-        ToolStripMenuItem CriaItemMenu(string texto)
+        ToolStripMenuItem CriaItemMenu(string texto, string nomeImagem)
         {
             var vToolStrip = new ToolStripMenuItem();
             vToolStrip.Text = texto;
+            Image myImage = (Image)global::MMEstacionamento.Properties.Resources.ResourceManager.GetObject(nomeImagem);
+            vToolStrip.Image = myImage;
             return vToolStrip;
         }
 
@@ -181,11 +183,11 @@ namespace MMEstacionamento
                 //Instanciando o menuStrip, exibi um menu de atalho
                 ContextMenuStrip menuContext = new ContextMenuStrip();
                 //Criando a variável que vai receber a mensagem.
-                var fecharAbaSelecionada = CriaItemMenu("Fechar aba selecionada");
-                var fecharAbasEsquerda = CriaItemMenu("Fechar abas esquerda");
-                var fecharAbasDireita = CriaItemMenu("Fechar abas direita");
-                var fecharTodasMenosEsta = CriaItemMenu("Fechar todas menos está");
-                var fecharTodas = CriaItemMenu("Fechar todas as abas");
+                var fecharAbaSelecionada = CriaItemMenu("Fechar aba selecionada", "DeleteTab");
+                var fecharAbasEsquerda = CriaItemMenu("Fechar abas esquerda", "DeleteLeft");
+                var fecharAbasDireita = CriaItemMenu("Fechar abas direita", "DeleteRight");
+                var fecharTodasMenosEsta = CriaItemMenu("Fechar todas menos está", "DeleteTab");
+                var fecharTodas = CriaItemMenu("Fechar todas as abas", "janela-fechada");
 
                 //Adicinando ao MenuStrip, para que seja mostrado quando o usuário clicar.
                 menuContext.Items.Add(fecharAbaSelecionada);
