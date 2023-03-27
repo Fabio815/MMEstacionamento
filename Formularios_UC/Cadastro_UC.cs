@@ -68,7 +68,7 @@ namespace MMEstacionamento.Formularios_UC
         Veiculo.Unit InserirAoFormulario()
         {
             Veiculo.Unit v = new Veiculo.Unit();
-            v.Placa = tb_placa.Text;
+            v._placa = tb_placa.Text;
             v.Proprietario = tb_proprietario.Text;
             v.Modelo = tb_modelo.Text;
             v.Cor = tb_cor.Text;

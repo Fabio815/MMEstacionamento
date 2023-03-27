@@ -133,8 +133,8 @@ namespace MMEstacionamento.Formularios_UC
             {
                 MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
         Patio.Unit EscreverPatio(double valor)
         {
             Patio.Unit patio = new Patio.Unit();
@@ -149,16 +149,13 @@ namespace MMEstacionamento.Formularios_UC
                 }
                 else
                 {
-                    patio.Faturamento += valorCobrado;
+                    patio.Faturamento = faturamento + patio.Faturamento;
                 }
             }
             return patio;
         }
-
-
-
         #endregion
-
+        
         private void colarToolStripButton_Click(object sender, EventArgs e)
         {
             try

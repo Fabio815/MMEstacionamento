@@ -44,6 +44,41 @@ namespace MMEstacionamento.Classes
 
             public double valorCobrado { get; set; }
 
+
+            public string _placa
+            {
+                get
+                {
+                    return Placa;
+                }
+                set
+                {
+                    if (value.Length != 8)
+                    {
+                        throw new Exception("A placa deve conter 8 caracteres.");
+                    }
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (char.IsDigit(value[i]))
+                        {
+                            throw new Exception("Os 3 primeiros caracteres devem conter números.");
+                        }
+                    }
+                    if (value[3] != '-')
+                    {
+                        throw new Exception("O 4º caractere deve conter um -");
+                    }
+                    for (int i = 4; i < 8; i++)
+                    {
+                        if (!char.IsDigit(value[i]))
+                        {
+                            throw new Exception("Apos o - deve conter números.");
+                        }
+                    }
+                    Placa = value;
+                }
+            }
+
             #region "CRUD LOCAL DB"
 
             public void IncluirFicharioDB(string conexao)
@@ -83,14 +118,14 @@ namespace MMEstacionamento.Classes
                 }
             }
 
-            public void AlterarFichaDB(string placa ,string conexao)
+            public void AlterarFichaDB(string placa, string conexao)
             {
                 string vJson = Veiculo.SerializeClassUnit(this);
                 FicharioDB fichario = new FicharioDB(conexao);
                 if (fichario.status)
                 {
-                    fichario.Atualizar(placa ,vJson);
-                    if (!( fichario.status))
+                    fichario.Atualizar(placa, vJson);
+                    if (!(fichario.status))
                     {
                         throw new Exception(fichario.mensagem);
                     }
@@ -135,7 +170,7 @@ namespace MMEstacionamento.Classes
                         {
                             //Aqui a variável v estou transformando o JSON em classe, conforme sua posição.
                             Veiculo.Unit v = Veiculo.DesSerializedClassUnit(lista[i]);
-                            ls.Add(new List<string> { v.Placa, v.Proprietario});
+                            ls.Add(new List<string> { v.Placa, v.Proprietario });
                         }
                         return ls;
                     }
