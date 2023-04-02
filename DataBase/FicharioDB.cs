@@ -1,4 +1,6 @@
-﻿using MMEstacionamento.Classes;
+﻿using Microsoft.VisualBasic;
+using MMEstacionamento.Classes;
+using MMEstacionamento.Formularios_UC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -177,12 +179,14 @@ namespace MMEstacionamento.DataBase
             }
         }
 
-        public void UpdateFaturamento(int id, string JSON)
+        public void UpdateFaturamento(int id, double faturamento)
         {
             status = true;
             try
             {
-                string SQL = "UPDATE " + tabela + " SET Faturamento = '" + JSON + "' WHERE Id = " + id + "";
+                SaidaVeiculo_UC saida = new SaidaVeiculo_UC();
+                //UPDATE produtos SET quantidade = quantidade + 1 WHERE nome_produto = 'Tênis de Futebol'
+                string SQL = "UPDATE " + tabela + " SET Faturamento = " + faturamento + " + " + saida.valorCobrado + " WHERE Id = " + id;
                 db.SQLCommand(SQL);
             }
             catch (Exception ex)

@@ -149,7 +149,7 @@ namespace MMEstacionamento.Formularios_UC
                 }
                 else
                 {
-                    patio.Faturamento = faturamento + patio.Faturamento;
+                    patio.Faturamento = faturamento;
                 }
             }
             return patio;

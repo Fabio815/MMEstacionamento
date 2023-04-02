@@ -41,11 +41,10 @@ namespace MMEstacionamento.Classes
 
             public void PatioAlterar(string conexao)
             {
-                string vJosn = Patio.SerializeClassUnit(this);
                 FicharioDB f = new FicharioDB(conexao);
                 if (f.status)
                 {
-                    f.UpdateFaturamento(this.Id ,vJosn);
+                    f.UpdateFaturamento(this.Id, Faturamento);
                     if (!f.status)
                     {
                         throw new Exception(f.mensagem);
